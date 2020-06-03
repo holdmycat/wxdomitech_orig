@@ -1,0 +1,12 @@
+@import '../../libs/common.wxss';
+
+
+.pullmask{
+  position: absolute;
+  height: 300rpx;
+  width: 100%;
+  background: green;
+  z-index: 30;
+  opacity:0;
+}
+

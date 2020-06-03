@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/mainpage/mainpage",
+    "pages/register/register",
+    "pages/itemlist/itemlist",
+    "pages/payment/payment",
+    "pages/poster/poster",
+    "pages/contactus/contactus",
+    "pages/me/me",
+    "pages/proinfo/proinfo"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "哆米-互联网+",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh": false,
+    "cloud": "true"
+  }
+}

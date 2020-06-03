@@ -1,0 +1,45 @@
+<view class="bgimg" 
+      style="width:100%;height:320rpx;background-image:url({{upimgurl}});">
+      <view class="shadow" 
+            style="position:fixed;margin-left:5%;background-color:#fff;width:90%;height:250rpx;margin-top:70rpx;border-radius:50rpx;">
+        <view class = 'logobody' style="margin-top:-7%;">
+          <image class = 'logocss' src = '{{logourl}}' mode = 'aspectFit'/>
+        </view>
+
+        <view class="topic" style="font-size:30rpx;margin-top:-5%;">河北哆米艾特科技有限公司</view>
+      </view>
+</view>
+
+ <view  style="position:fixed;margin-left:39%;margin-top:10%;">
+    <view class="userinfo-avatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>         
+    <view class="topic">
+    <open-data type="userNickName"></open-data>
+    </view>
+</view>
+
+
+<view style="margin-left:5%;margin-top:54%;position:fixed;width:90%;">
+  <block wx:for="{{iteminfos}}" wx:key="{{index}}" wx:for-item="item">
+    <view class="shadow2" style="margin-bottom:7%;border-radius:10rpx;height:100rpx">
+        <view style="display:flex;">
+          <!-- pic icon -->
+          <image style="margin-left:5%;width:60rpx;height:50rpx;margin-right:4%;margin-top:35rpx;"
+                src="{{item.iconaddr}}">
+          </image>
+          <!-- 产品类型 -->
+          <view class="text" 
+                bindtap='tapme'
+                id='{{index}}'
+                style="color:#000;line-height:400%;font-size:30rpx;width:50%;margin-top:0%;">
+            {{item.name}}
+          </view>
+          <image style="margin-left:20%;width:60rpx;height:50rpx;margin-top:35rpx;"
+                 id="{{index}}"
+                 src="{{item.rightarrowaddr}}">
+          </image>
+        </view>
+    </view>  
+  </block>
+</view>

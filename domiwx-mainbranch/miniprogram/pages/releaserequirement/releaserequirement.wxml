@@ -1,0 +1,357 @@
+
+<view hidden="{{activeindex == -1?false:true}}">
+
+  <view class='text' style="margin-top:10%;font-size:30rpx;font-weight:700;text-align:center">
+    发布需求
+  </view>
+
+  <view class="shadow bg" style="position:fixed;height:{{contentheight}}px; margin-top:10%;">
+    <view style="margin-left:10%;margin-top:10%">
+        <view class="text" style="font-size:35rpx"> 
+          选择企划类型， 
+          <text style="font-size:25rpx">使您获取更好的服务</text>
+        </view>
+        <view class="text" style="margin-top:5%;">不论何种企划，均是免费发布</view> 
+
+        <view class="shadow" style="width:90%;height:170rpx;margin-top:10%;border-radius:10rpx;{{iteminfo.type == 0? 'border: 2rpx solid #52c8f5;':''}}" 
+              id="0" 
+              bindtap="taprequire">
+          <view class="flex-wrp">
+            <view class="topic" style="margin-top:10%;margin-left:5%;">
+              概要需求
+            </view>
+            <view style="margin-left:6%;">
+                <view class="text" style="margin-top:10%;">
+                  *您希望快速发布企划
+                </view>
+                <view class="text" style="margin-top:5%;">
+                  *快速获得制作方应征
+                </view>
+                <view class="text" style="margin-top:5%;">
+                  *需求尚不明确，需要进一步沟通
+                </view>
+            </view>
+          </view>
+        
+        </view>
+
+        <view class="shadow" 
+              style="width:90%;height:170rpx;margin-top:5%;border-radius:10rpx;{{iteminfo.type == 1? 'border: 2rpx solid #52c8f5;':''}}"
+              id="1" 
+              bindtap="taprequire"
+        >    
+          <view class="flex-wrp">
+            <view class="topic" style="margin-top:10%;margin-left:5%;">
+              详细需求
+            </view>
+            <view style="margin-left:6%;">
+                <view class="text" style="font-size:20rpx;font-weight:700;width:100%;margin-top:10%;">
+                  <!-- *首次发布需要进行<text style="color:#52c8f5">企业认证</text> -->
+                  *您明确您的需求
+                </view>
+                <view class="text" style="margin-top:5%;">
+                  *您希望您的需求有更高的可信度
+                </view>
+                <view class="text" style="margin-top:5%;">
+                  *您希望获得更高质量制作方的应征
+                </view>
+                
+            </view>
+          </view>
+
+        </view> 
+    </view>
+
+    <view  
+      style="position:fixed; bottom:25%;margin-left:65%;" 
+      >
+        <button class="nextstep" 
+                style="width:140rpx;height:40rpx;" 
+                bindtap="tapnext">
+          <view class="text" style="color:#fff;line-height:180%;">下一步</view>
+        </button>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{activeindex == 0?false:true}}">
+
+  <!-- 选择概要需求的需求页面 -->
+  <view hidden='{{iteminfo.type == 0?false:true}}'>
+
+    <!-- 发布概要需求 -->
+    <view class='text' style="margin-top:10%;font-size:35rpx;font-weight:700;text-align:center">
+        发布概要需求
+    </view>
+
+    <!-- 概要需求内容UI -->
+    <view class="shadow"
+          style="position:fixed;margin-left:5%;margin-top:10%;border-radius:10rpx;width:90%;height:{{1.2*contentheight}}px"
+    >
+      
+      <view style="margin-left:10%;margin-top:10%">  
+        
+        <!-- 应用类型 -->
+        <view class="shadow" style="margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+              <picker bindchange="changeapptype" value="{{producttypeindex}}" range="{{apptype}}">
+                <view class="textv2" style="line-height:200%;margin-left:10%">
+                  <text style="color:#000">应用类型:{{apptype[producttypeindex].name}}</text>
+                </view>        
+              </picker>
+        </view>
+
+        <!-- 姓名 --> 
+        <view class="shadow {{iteminfo.basicinfo.username.showerror==true?'errorcss':''}}" 
+                  style="margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+            <view style="display: flex;width:100%;">
+              <view class="textv2" style="color:#000;line-height:200%;margin-left:10%;width:15%">姓名:</view>
+              <input placeholder='至少输入2个字体' 
+                    placeholder-class="placeholder" 
+                    style="width:85%"
+                    class="placeholder"
+                    bindblur="inputlosefocus"
+                    id="0"
+                    maxlength='4'
+                    >
+              </input>
+            </view>   
+        </view>
+
+        <!-- 手机号 -->
+        <view style="display:flex;">
+          <view class="shadow {{iteminfo.basicinfo.phonenumber.showerror==true?'errorcss':''}}" 
+                    style="margin-bottom:10%;width:60%;height:50rpx;border-radius:10rpx;">
+              <view style="display:flex;width:100%;">
+                  <input placeholder='手机号' 
+                          placeholder-class="placeholder" 
+                          style="width:85%"
+                          class="placeholder after"
+                          bindblur="inputlosefocus"
+                          id="1"
+                          type="number"
+                          maxlength='11'
+                          >
+                    </input>
+                  
+              </view>
+              
+          </view>
+          <!--发送手机验证码-->
+          <view class = "shadow {{phonecode.cansend == true? '':'disabled'}}"
+                bindtap="tapphonecode"
+                style="margin-left:3%;width:25%;height:50rpx;border-radius:10rpx;"
+                disabled = "{{phonecode.cansend == true?false:true}}">
+            <view class = "text {{phonecode.cansend == true? '':'disabledfont'}}" 
+                  style="line-height:250%;text-align:center;color:#000">
+               {{phonecode.content}}
+            </view>
+          </view>
+        </view>
+
+        <!-- 填写验证验证码 -->
+        <view style="display:flex;">
+          <view class="shadow {{phonecode.cansend == true? 'disablebg':''}}" 
+                    style="margin-bottom:10%;width:60%;height:50rpx;border-radius:10rpx;">
+              <view style="display:flex;width:100%;">
+                  <input placeholder='填写验证码' 
+                          placeholder-class="placeholder" 
+                          style="width:85%"
+                          class="placeholder after "
+                          id="2"
+                          type="number"
+                          maxlength='6'
+                          disabled="{{phonecode.cansend == true? true:false}}" 
+                          >
+                    </input>
+                  
+              </view>
+              
+          </view>
+          <!--发送手机验证码-->
+          <view class = "shadow {{phonecode.cansend == true? 'disabled':''}}"
+                bindtap="verifyphonecode"
+                style="margin-left:3%;width:25%;height:50rpx;border-radius:10rpx;"
+                disabled = "{{phonecode.cansend == true?false:true}}">
+            <view class = "text " 
+                  style="line-height:250%;text-align:center;">
+               校验
+            </view>
+          </view>
+        </view>
+
+        <!-- 标题 -->
+        <view class="shadow {{iteminfo.basicinfo.topic.showerror==true?'errorcss':''}}" 
+                  style="margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+          <view style="display: flex;width:100%;">
+            <view class="textv2" style="color:#000;line-height:200%;margin-left:10%;width:15%">标题:</view>
+            <input placeholder='至少输入5个字体' 
+                  placeholder-class="placeholder" 
+                  style="width:85%"
+                  class="placeholder"
+                  bindblur="inputlosefocus"
+                  maxlength='15'
+                  id="5"
+                  >
+            </input>
+          </view>   
+        </view>
+
+        <!--项目描述  -->
+        <view class="shadow" style="width:90%;border-radius:10rpx;height:200rpx">
+          <view class="textarea-wrp">
+              <textarea placeholder='项目简介<例如：项目领域，项目功能等...>'
+                        placeholder-style='color:#7e8eaa;font-size:25rpx;'
+                        maxlength='200'
+                        style="font-size:25rpx;color:#7e8eaa;position:fixed;margin-left:2%;margin-top:2%;height: 200rpx;width:90%" />
+            </view>
+        </view>
+
+        <view class="bottombtn" 
+              style="margin-left:25%;position:fixed;bottom:2%;" 
+              hidden="{{activeindex>=0?false:true}}">   
+          <button class="nextstep" 
+                  style="width:140rpx;height:40rpx;" 
+                  bindtap="broadcastsimplerequest">
+                  <view class="text" style="color:#fff;line-height:180%;">确认并发布</view>
+          </button>
+        </view>
+      
+
+      </view>
+          
+    </view>
+
+        
+      
+      
+  </view>
+
+  <!-- 选择详细需求的需求页面 -->
+  <view hidden='{{iteminfo.type == 1?false:true}}'>
+    <!-- 发布流程UI -->
+    <view class="shadow bg" style="height:70px;margin-top:10%;">
+      <view class="flex-wrp" style="flex-direction:row;">
+        <block wx:for="{{requirearray}}" wx:key="{{index}}" wx:for-item="item">
+          <view class="flex-wrp" style="width:30%;margin-top:2%;margin-bottom:3%;">
+            
+            <view class="shadow {{activeindex>=index ? 'bc2':'bc1'}}">
+              <view class="{{activeindex==index?'text1':''}}" 
+                    style="font-size:25rpx;text-align:center;line-height:180%"
+                    hidden="{{activeindex>index?true:false}}"
+              >
+                {{item._id}}
+              </view>
+              <view hidden="{{activeindex>index?false:true}}" style="margin-left:8rpx; margin-top:-5rpx;">
+                <image
+                  src="../../images/ok-icon.png" style="width:24rpx;height:24rpx" mode="aspectfit"
+                >
+                </image>
+              </view>
+            </view>
+
+            <view class="{{activeindex>=index ? 'textfocused':'text'}}" style="margin-left:10rpx; margin-top:5%;">
+              {{item.name}}
+            </view>
+            <view class="text" style="margin-left:10rpx; margin-top:5%;" hidden="{{index == 5? true:false}}">
+              ..
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 每一个流程的详细UI -->
+    <view class="shadow bg" style="position:fixed;height:{{contentheight}}px; margin-top:10%;">
+      <!-- 基础配置页面 -->
+      <view hidden="{{activeindex == 0?false:true}}">
+        <view style="margin-left:10%;margin-top:10%">  
+            
+            <view class="shadow" style="margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+              <picker bindchange="changeapptype" value="{{producttypeindex}}" range="{{producttype}}">
+                <view class="textv2" style="line-height:200%;margin-left:10%">
+                  应用类型:{{producttype[producttypeindex]}}
+                </view>        
+              </picker>
+            </view>
+            
+            <view class="shadow {{iteminfo.basicinfo.topic.showerror==true?'errorcss':''}}" 
+                  style="margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+              <view style="display: flex;width:100%;">
+                <view class="textv2" style="line-height:200%;margin-left:10%;width:15%">标题:</view>
+                <input placeholder='至少输入5个字体' 
+                      placeholder-class="placeholder" 
+                      style="width:85%"
+                      class="placeholder"
+                      bindblur="inputlosefocus"
+                      id="5"
+                      >
+                </input>
+              </view>   
+            </view>
+            
+            <view class="shadow" style="display:flex;margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+              <view class="textv2" style="line-height:200%;margin-left:10%;width:60%">
+              {{iteminfo.basicinfo.uploadcode.content}}
+              </view>
+              <checkbox bindtap="checkupload" 
+                        style="margin-top:1%;zoom:0.5;"
+                        checked="{{iteminfo.basicinfo.uploadcode.checked}}"/>       
+            </view>
+            
+            <view class="shadow" style="display:flex;margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+              <view class="textv2" style="line-height:200%;margin-left:10%;width:60%">
+              {{iteminfo.basicinfo.designpro.content}}
+              </view>
+              <checkbox bindtap="checkdesignpro" 
+                        style="margin-top:1%;zoom:0.5;"
+                        checked="{{iteminfo.basicinfo.designpro.checked}}"/>       
+            </view>
+            
+            <view class="shadow" style="display:flex;margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+              <view class="textv2" style="line-height:200%;margin-left:10%;width:60%">
+              {{iteminfo.basicinfo.requiredoc.content}}
+              </view>
+              <checkbox bindtap="checkrequiredoc" 
+                        style="margin-top:1%;zoom:0.5;"
+                        checked="{{iteminfo.basicinfo.requiredoc.checked}}"/>       
+            </view>
+
+              <view class="shadow" style="display:flex;margin-bottom:10%;width:90%;height:50rpx;border-radius:10rpx;">
+              <view class="textv2" style="line-height:200%;margin-left:10%;width:60%">
+              {{iteminfo.basicinfo.uploadlogo.content}}
+              </view>
+              <checkbox bindtap="checkuploadlogo" 
+                        style="margin-top:1%;zoom:0.5;"
+                        checked="{{iteminfo.basicinfo.uploadlogo.checked}}"/>       
+            </view>
+
+        </view>
+      </view>
+
+      <!-- 按钮UI ： if activeindex > 0 （会有两个按钮,一个是上一步，一个是下一步）-->
+      <view class="bottombtn" 
+              style="margin-left:45%;margin-top:15%;" 
+              hidden="{{activeindex>=0?false:true}}">
+        <view style="display:flex">
+          <button class="prestep" 
+                  style="width:140rpx;height:40rpx;margin-right:10%" 
+                  bindtap="tappre">
+                  <view class="text" style="color:#003;line-height:180%;">上一步</view>
+          </button>
+          <button class="nextstep" 
+                  style="width:140rpx;height:40rpx;" 
+                  bindtap="tapnext">
+                  <view class="text" style="color:#fff;line-height:180%;">下一步</view>
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<view style="color:#7e8eaa;font-size:20rpx;position:fixed;bottom:0rpx;margin-left:60%;">
+  domitech all right reserved
+</view>
+

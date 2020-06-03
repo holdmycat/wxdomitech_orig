@@ -1,0 +1,8 @@
+    <view class = 'bc_bg' style = 'height:{{height}}px' >
+      <view class = 'topic_bg' style = 'width:80%; height:{{topicHeight}}px'/>
+      <view class = 'character_bg' style = 'width:{{character_width}}px; height:{{characterHeight}}px'/>
+      <button class="bordernone"  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"  >
+      授权登陆
+    </button>   
+      <text class = 'text'> DOMI <text style='color:#fff'> TECH</text></text>
+    </view>

@@ -1,0 +1,72 @@
+
+.topic {
+  margin-top: 20%;
+  width: 100%;
+  height: 200rpx;
+  text-align: center;
+  line-height: 200rpx;
+  color: #7e8eaa;
+  font-size: 48rpx;
+  font-family: "幼圆";
+}
+
+.logobody{
+  display:flex;          
+  justify-content: center;
+}
+
+.logocss {
+  margin-top: 6%;
+  height:250rpx;
+  border-radius: 10rpx;
+}
+
+.description {
+  margin-top: 4%;
+  width: 100%;
+  height: 20rpx;
+  text-align: center; 
+  color: #bfbfbf;
+  font-size: 22rpx;
+ 
+}
+
+.text {
+  line-height: 50rpx;
+   display: block;
+}
+
+.loginbtnbody{
+  margin-left: 30%;
+  margin-top: 30%;
+  justify-content: center;
+  display: inline-block;
+  width: 40%;
+  height: 100rpx;
+  background-color: #fff;
+ 
+  border-radius: 15rpx;
+}
+
+.loginbtnbody.shadow{
+  -moz-box-shadow: 3px 3px 20rpx 3rpx rgba(58, 94, 225, 0.3);
+  -webkit-box-shadow:3px 3px 20rpx 3rpx rgba(58, 94, 225, 0.3);
+  box-shadow: 3px 3px 20rpx 3rpx rgba(58, 94, 225, 0.3);
+}
+
+.loginbtncss {
+  width:46%;
+  height: 120rpx;
+}
+
+.logintext {
+  width: 100%;
+  height: 20rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #7e8eaa;
+  font-size: 30rpx;
+  font-family: "幼圆";
+}
+
+

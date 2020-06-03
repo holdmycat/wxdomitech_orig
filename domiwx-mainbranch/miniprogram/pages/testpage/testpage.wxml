@@ -1,0 +1,36 @@
+<import src="../common/register/register.wxml" />
+
+<view wx:if='{{registerdata.isShow == true}}'>
+  <template is="register" data="{{...registerdata}}" />
+</view>
+
+
+<view wx:if='{{registerdata.isShow == false}}'>
+  <view style="margin-top:2%;"bindtap="testtemplate">
+  123
+  </view>
+
+  
+</view>
+
+
+<view bindtap="createpro">
+    create pro
+</view>
+<view bindtap="getpro">
+    get pro
+</view>
+<view bindtap="editpro">
+    edit pro
+</view>
+<view bindtap="delpro">
+    delete pro
+</view>
+
+<button open-type="contact" bindcontact="handleContact">12</button>
+
+
+
+
+
+<!-- <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar> -->

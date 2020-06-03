@@ -1,0 +1,5 @@
+<template name="register" data="{{...registerdata}}">
+<view bindtap="{{backaction}}">
+  3333
+</view>
+</template>

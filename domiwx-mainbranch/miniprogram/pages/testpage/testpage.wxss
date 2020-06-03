@@ -1,0 +1,6 @@
+
+.page {
+    background-color:#303238; 
+  height: 100%;
+    overflow: hidden;
+}

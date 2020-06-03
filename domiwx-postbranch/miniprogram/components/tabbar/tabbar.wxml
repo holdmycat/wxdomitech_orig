@@ -1,0 +1,29 @@
+<view class="c_tabbar"
+  style="color:{{data.color?data.color:''}};border-color: {{data.borderStyle?data.borderStyle:''}};background-color:{{data.backgroundColor?data.backgroundColor:''}}">
+  <!--首页-->
+  <view wx:for="{{ data.list }}" wx:for-item="item" wx:for-index="idx" wx:key="key">
+        <view  wx:if="{{item.iconType == ''}}"
+               class="tabbar_item {{item.iconType=='big' ? 'big_icon':''}} {{item.iconType =='overflow' ? 'big_icon overflow':''}}" 
+               bindtap='change'
+               data-index="{{idx}}">
+              <image class="tabbar_item_img {{item.iconType? item.iconType:''}}" 
+                    src="{{index == idx && !item.iconType? item.selectedIconPath : item.iconPath}}"></image>
+              <text wx:if="{{item.text && !item.iconType}}" 
+                    class="tabbar_item_title {{index == idx ? 'selected' : ''}}"
+                    style="color:{{index == idx && data.selectedColor?data.selectedColor:''}}">{{item.text}}</text>
+        </view>
+
+         <button  wx:elif="{{item.iconType != ''}}"
+                open-type='share'
+                
+                class="free-btn-bordernone tabbar_item {{item.iconType=='big' ? 'big_icon':''}} {{item.iconType =='overflow' ? 'big_icon overflow':''}}" 
+                data-index="{{idx}}">
+                <image class="tabbar_item_img {{item.iconType? item.iconType:''}}" 
+                       style='margin-top:13%'
+                       src="{{index == idx && !item.iconType? item.selectedIconPath : item.iconPath}}">
+                </image>
+         
+        </button>
+        
+  </view>
+</view>

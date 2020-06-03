@@ -1,0 +1,20 @@
+
+<view class = 'topic'>
+  哆米-软件定制开发
+</view>
+ 
+<view class = 'logobody'>
+  <image class = 'logocss' src = '{{logourl}}' mode = 'aspectFit'/>
+</view>
+
+<view class = 'description'>
+  <text class = 'text'>website:www.domitech.com.cn</text>
+  <text class = 'text'>all right reserved</text>
+</view>
+
+<view class = 'loginbtnbody shadow'>
+  <view bindtap = 'presslogin' class = 'logintext'>授权登陆</view>
+</view>
+
+
+

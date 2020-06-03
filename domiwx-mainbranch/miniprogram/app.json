@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/payment/payment",
+    "pages/mainpage/mainpage",
+    "pages/itemlist/itemlist",
+    "pages/scrollview/scrollview",
+    "pages/testpage/testpage",
+    "pages/register/register",
+    "pages/poster/poster",
+    "pages/contactus/contactus",
+    "pages/me/me",
+    "pages/releaserequirement/releaserequirement",
+    "pages/proinfo/proinfo",
+    "pages/index/index"
+    
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "哆米-软件开发运营",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh": false,
+    "cloud": "true"
+  }
+}

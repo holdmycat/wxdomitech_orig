@@ -1,0 +1,194 @@
+
+<scroll-view 
+      class = 'scrollPart'
+      scroll-y = 'true'
+      style="height: {{scrollHeight}}px;"
+      bindscrolltoupper="upper" 
+      bindscrolltolower="lower"   
+  >
+  <swiper class = 'swiper-change' 
+      style='height:{{swiperHeight}}px'
+      bindchange="swiperChange" 
+      indicator-active-color="#595959" 
+      indicator-color="#fff" 
+      autoplay="{{autoplay}}"  
+      current="{{swiperIndex}}" 
+      interval="{{interval}}"
+      duration="{{duration}}"
+      circular="true">
+    <block wx:for="{{bannerlist}}"  wx:key="{{index}}" wx:for-item="item">
+      <swiper-item> 
+        <view>
+        <image 
+            class = 'shadow'
+            bindtap='pressSwiperItem'
+            id='{{index}}'
+            style="margin-left:5%;border-radius:10rpx;width:90%;height:{{0.9*swiperHeight}}px "
+            src="{{item.bgurl}}" mode='aspectFill'>
+        </image>
+        </view>
+      
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 成交信息 -->
+  <!-- <view style = 'margin-top:2%;width:100%'>
+
+   <swiper class = 'swiper-change' 
+      style='height:120rpx'
+      bindchange="swiperChange" 
+      indicator-active-color="#595959" 
+      indicator-color="#fff" 
+      autoplay="{{autoplay}}"  
+      current="{{swiperIndex}}" 
+      interval="4000"
+      vertical='true'
+      duration="{{duration}}"
+      circular="true">
+      <block wx:for="{{bannerlist}}"  wx:key="{{index}}" wx:for-item="item">
+        <swiper-item> 
+          <view class="flex-wrp shadow" 
+                style="margin-bottom:3%;margin-left:5%;width:90%;height:100rpx;border-radius:20rpx">  
+          
+              <image style="margin-left:10rpx;width:50rpx;height:50rpx;margin-right:4%;margin-top:25rpx;"
+                    src="{{apptype[dealpro[index].apptype].url}}"
+                    mode="aspectfit"
+              ></image>
+              <view class='text' 
+                    style='margin-left:-25rpx;font-size:25rpx;margin-top:40rpx;'>
+                    ({{apptype[dealpro[index].apptype].name}})
+              </view>
+  
+              <view class='text' 
+                    style='font-size:25rpx;font-weight:700;margin-left:5rpx;margin-top:40rpx;'>
+              业务员{{dealpro[index].phone}}完成交易，获取佣金{{dealpro[index].wxidcommision}}元
+              </view>
+
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> -->
+   
+  <view style = 'margin-top:2%;'>
+    <!-- <view class = 'scrolltitle' style="margin-left: 5%;color:#000;font-weight:700">
+      哆米来了
+    </view>
+    <view style='margin-top:3%;'>
+          <view class="flex-wrp" style="margin-left:5%;margin-right:5%;flex-direction:row; justify-content:space-between">
+            <block wx:for="{{cmpIntroArray}}" wx:key="{{index}}" wx:for-item="item">
+              <view id = '{{index}}'
+                    bindtap = 'tapcmp'>
+                <image class = 'shadow'
+                  style='width:200rpx;height:132rpx;border-radius:10rpx'
+                  src="{{item.bgurl}}" mode='aspectFit'></image>
+                <view class = 'text'  
+                      style='font-size:20rpx;margin-top:1%; text-align: center; text-decoration:underline;'>
+                  {{item.name}}
+                </view>
+              </view>
+            </block>
+          </view>
+    </view> -->
+    <view class = 'scrolltitle' style="margin-top:7%;margin-left: 5%;color:#000;font-weight:700">
+      案例精选
+    </view>
+    <view style = 'margin-top:5%;'>
+      <view style='width:100%;'>
+        <view class="flex-wrp" style="margin-left:5%;flex-direction:row; justify-content:center">
+          <block wx:for="{{apptype}}" wx:key="{{index}}" wx:for-item="item">
+            <view id="{{index}}" 
+                  class="textv2" 
+                  style=' height: 100rpx;width: 100rpx;'
+                  bindtap="tabClick">
+              <view>{{item.name}}</view>
+              <view class="{{activeIndex == (index) ? 'activeitem' : ''}}"></view>
+            </view>
+          </block>        
+        </view> 
+      </view>  
+      <block wx:for="{{cursucpro.list}}" wx:key="{{index}}" wx:for-item="item">
+        <view class="flex-wrp shadow" 
+              style="margin-bottom:3%;margin-left:5%;width:90%;height:240rpx;border-radius:20rpx"
+              >   
+          <image 
+            style='margin-left:5rpx;margin-top:5rpx;width:345rpx;height:230rpx;border-radius:10rpx'
+            bindtap='tapsucpro'  
+              id = '{{index}}'
+            src="{{item.imgurl}}" >
+          </image>
+          <view >
+            <!-- <view class="textv2" style="font-size:25rpx;width:150rpx;margin-left:5%; margin-top:10%">{{areatype[item.apptype]}}</view> -->
+           
+            <view class="text" style="margin-top:15%;margin-left:5%;font-size:30rpx">{{item.itemname}}</view>
+
+            <view 
+              style="background-color:#7e8eaa44;margin-left:5%;margin-top:5%;width:300rpx;height:2rpx;">
+            </view>
+
+            <view class="flex-wrp">
+                <image 
+                style='margin-left:0rpx;margin-top:5rpx;width:64rpx;height:64rpx;'
+                src="../../images/timer.png" >
+                </image>
+                <view class="textv2" 
+                style="width:200rpx;margin-left:2rpx;font-size:20rpx;margin-top:8%">{{item.itemdate}}</view>
+            </view>
+           
+            <!-- <view class="text" style="margin-top:5%;margin-left:5%;font-size:20rpx">工期：{{item.workduration}}个工作日</view> -->
+          </view>   
+        </view>
+      </block>
+      
+    </view>
+  </view>
+</scroll-view>
+  
+<tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>
+
+<!-- 弹出背景mask  -->
+<!-- <view class="fullbg {{isfull ?'fullopacity':''}}" hidden="{{isfull?false:true}}" ></view> -->
+<view class="fullbg {{isfull ?'fullopacity':''}}" hidden="{{isfull?false:true}}">
+</view>
+
+
+<view hidden="{{isfull?false:true}}">
+  <view style="display:block;">
+    <view wx:if="{{cursucpro.list[activecmpindex].videorate == 1}}">
+      <video id = 'bc-video' 
+              initial-time="{{inittime}}"
+              autoplay = '{{autoplayv1}}' 
+              src = '{{cursucpro.list[activecmpindex].videourl}}'
+              style='position:fixed;top:0;height:{{videoHeight}}px; width:{{videoWidth}}px;z-index:15;margin-top:1%;margin-left:15%;'
+              bindpause = 'bindpause'
+              bindPlay = 'bindPlay'
+              bindended = 'bindended' />
+      <button class="shadow2" 
+        style="z-index:15;line-height:80rpx;background-color:red;color:#fff;;width:240rpx;height:80rpx;margin-top:-15%;" 
+        bindtap="closevideo">
+        关闭
+      </button>
+    </view>
+    <view wx:elif="{{cursucpro.list[activecmpindex].videorate == 0}}">
+    <video id = 'bc-video' 
+              initial-time="{{inittime}}"
+              autoplay = '{{autoplayv1}}' 
+              src = '{{cursucpro.list[activecmpindex].videourl}}'
+              style='position:fixed;top:0;height:{{swiperHeight}}px; width:100%;z-index:15;margin-top:50%;'
+              bindpause = 'bindpause'
+              bindPlay = 'bindPlay'
+              bindended = 'bindended' />
+      <button class="shadow2" 
+        style="z-index:15;line-height:80rpx;background-color:red;color:#fff;;width:240rpx;height:80rpx;margin-top:-35%;" 
+        bindtap="closevideo">
+        关闭
+      </button>
+    </view>
+  </view>
+</view>
+<!-- end -->
+<!-- style='position:fixed;top:0;height:{{swiperHeight}}px; width:100%;z-index:15;margin-top:50%;' -->
+
+  
+  

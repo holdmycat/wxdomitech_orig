@@ -1,0 +1,116 @@
+<view hidden='{{isvertical== 1?false:true}}'>
+  <view class="flex-wrp shadow" style="margin-left:5%;width:90%;height:695rpx;border-radius:20rpx"> 
+    <swiper class = 'swiper-change' 
+          style='height:675rpx;width:380rpx'
+          bindchange="swiperChange" 
+          indicator-active-color="#595959" 
+          indicator-color="#fff" 
+          autoplay="{{autoplay}}"  
+          current="{{swiperIndex}}" 
+          interval="{{interval}}"
+          duration="{{duration}}"
+          circular="true">
+      <block wx:for="{{iteminfo.imgarray}}"  wx:key="{{index}}" wx:for-item="item">
+        <swiper-item> 
+          <image 
+            style="width:380rpx;height:675rpx;margin-top:10rpx;margin-left:5rpx;border-radius:20rpx"
+              src="{{item}}" mode="aspectfit"
+          >
+        </image>
+        </swiper-item> 
+      </block>
+    </swiper>
+    <view>
+        <view class="topic" style="margin-top:60%;margin-left:15rpx;font-size:30rpx;font-weight:700;">产品行业：{{areatype[iteminfo.areatype]}}</view>
+        <view style="color:#d53030;margin-left:15rpx;margin-top:10%;">3w - 6w</view>
+        <view style="font-size:20rpx;color:#7e8eaa;margin-left:15rpx;margin-top:10%;">开发:{{iteminfo.skilltype}}</view>
+        <view style="font-size:20rpx;color:#7e8eaa;margin-left:15rpx;margin-top:10%;">演示地址：</view>
+        <view class = 'iconbody shadow' style="background-color:#14a34b;margin-left:10rpx;height:40rpx;margin-top:25%;">
+          <view class = 'topic1' bindtap='tapposter'>发布需求</view>
+        </view>
+        <view class = 'iconbody shadow' style="background-color:#14a34b;margin-left:10rpx;height:40rpx;margin-top:20%;">
+          <view class = 'topic1' bindtap ='contactus'>联系我们</view>
+        </view>
+    </view>
+  </view>
+</view>
+
+<view hidden='{{isvertical == 1?true:false}}'>
+   <view class="flex-wrp shadow" style="margin-left:5%;width:90%;height:695rpx;border-radius:20rpx"> 
+    <swiper class = 'swiper-change' 
+          style='height:50%;width:100%'
+          bindchange="swiperChange" 
+          indicator-active-color="#595959" 
+          indicator-color="#fff" 
+          autoplay="{{autoplay}}"  
+          current="{{swiperIndex}}" 
+          interval="{{interval}}"
+          duration="{{duration}}"
+          circular="true">
+      <block wx:for="{{iteminfo.imgarray}}"  wx:key="{{index}}" wx:for-item="item">
+        <swiper-item> 
+          <image 
+            style="width:100%;height:100%;margin-top:10rpx;margin-left:5rpx;border-radius:20rpx"
+              src="{{item}}" mode="aspectfit"
+          >
+        </image>
+        </swiper-item> 
+      </block>
+    </swiper>
+    <view>
+        <!-- <view class="topic" style="margin-top:60%;margin-left:15rpx;font-size:30rpx;font-weight:700;">产品行业：{{areatype[iteminfo.areatype]}}</view>
+        <view style="color:#d53030;margin-left:15rpx;margin-top:10%;">3w - 6w</view>
+        <view style="font-size:20rpx;color:#7e8eaa;margin-left:15rpx;margin-top:10%;">开发:{{iteminfo.skilltype}}</view>
+        <view style="font-size:20rpx;color:#7e8eaa;margin-left:15rpx;margin-top:10%;">演示地址：</view>
+        <view class = 'iconbody shadow' style="background-color:#14a34b;margin-left:10rpx;margin-top:25%;">
+          <view class = 'topic1' bindtap='tapposter'>发布需求</view>
+        </view>
+        <view class = 'iconbody shadow' style="background-color:#14a34b;margin-left:10rpx;margin-top:20%;">
+          <view class = 'topic1' bindtap ='contactus'>联系我们</view>
+        </view> -->
+    </view>
+  </view>
+</view>
+
+<!-- 标签页 -->
+<view style = 'margin-top:5%;'>
+  <view style='width:100%;'>
+    <view class="flex-wrp" style="margin-left:5%;flex-direction:row; justify-content:center">
+      <block wx:for="{{productdetail}}" wx:key="{{index}}" wx:for-item="item">
+        <view id="{{index}}" 
+              class="textv2" 
+              style=' height:100rpx;width:200rpx;'
+              bindtap="tabClick">
+          <view>{{item}}</view>
+          <view class="{{activeIndex == (index) ? 'activeitem' : ''}}"></view>
+        </view>
+      </block>        
+    </view> 
+  </view>  
+</view>
+
+<!-- 标签页内容 -->
+<view style = 'margin-top:2%;'>
+      <view class = 'textv2' style="flex-flow: row wrap;margin-left:12%;width:75%;">
+        {{curtext}}
+      </view>
+</view>
+
+<!-- 返回首页 -->
+<view style="position:fixed;bottom:25rpx;width:100%">
+  <view class = 'shadow' style="margin-left:33%;width:30%;height:50rpx;border-radius:10rpx;">
+      <view class = 'topic1' bindtap='returnmainpage' style="color:#7e8eaa">返回首页</view>
+  </view>
+</view>
+
+
+
+
+<!-- <view class="flex-wrp" style="flex-direction:row; justify-content:space-around">
+  <block wx:for="{{businessarray}}"  wx:key="{{index}}" wx:for-item="item">
+    
+   
+  </block>
+  </view> -->
+
+
