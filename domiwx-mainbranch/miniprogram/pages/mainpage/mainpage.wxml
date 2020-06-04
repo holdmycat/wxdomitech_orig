@@ -32,10 +32,19 @@
     <block wx:for="{{videoList}}" wx:key="{{index}}" wx:for-item="item">
       <view class="mod-item" style="height:{{videoItemInfo.height + 10}}px" >
         <view class="flex-wrp shadow" style="margin-left:5%;width:100%;height:{{videoItemInfo.height}}px;"bindtap='tapsucpro'  id = '{{item.id}}'>   
-         <image 
-                style='margin-left:5px;margin-top:2px;width:{{videoItemInfo.width}}px;height:{{videoItemInfo.width/2}}px'
-                src="/images/vr1.png" >
-         </image>
+
+          <image 
+                  style='margin-left:5px;margin-top:2px;width:{{videoItemInfo.width}}px;height:{{videoItemInfo.width/2}}px'
+                  src="/images/vr1.png" >
+          </image>
+
+          <view style = "margin-left:5px;width:100%;font-size:10px;">VR Outdoor Cinem</view>
+          
+          <view style = "padding-top:1%;"></view>
+          <view class='item' wx:for="{{list}}" style="margin-left:5px;">
+            <image style='width:20px;height:20px' src='{{item.imgurl}}'></image>  
+          </view> 
+
 
         </view>
       </view>

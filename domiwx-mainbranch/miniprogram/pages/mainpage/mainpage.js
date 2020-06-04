@@ -42,7 +42,9 @@ Page({
     ],
     videoItemInfo:{
       width:0,
-      height:0
+      height:0,
+      fontHeight:0,//字体高度
+      iconAppHeight:0,//app类型高度
     },
     
     videoList:[
@@ -82,23 +84,23 @@ Page({
         "selectedIconPath": "/images/icon_home_active.png",
         "text": "首页"
       },
-      {
-        "key": "share",
-        "iconPath": "/images/icon_tag.png",
-        "selectedIconPath": "/images/icon_tag_active.png",
-        "text": "转发赚佣金"
-      },
+      // {
+      //   "key": "share",
+      //   "iconPath": "/images/icon_tag.png",
+      //   "selectedIconPath": "/images/icon_tag_active.png",
+      //   "text": "转发赚佣金"
+      // },
       {
         "key": "post",
         "iconType": "big overflow circle shadow",
         "text": "发布需求"
       },
-      {
-        "key": "discover",
-        "iconPath": "/images/icon_notebook.png",
-        "selectedIconPath": "/images/icon_notebook_active.png",
-        "text": "发现"
-      },
+      // {
+      //   "key": "discover",
+      //   "iconPath": "/images/icon_notebook.png",
+      //   "selectedIconPath": "/images/icon_notebook_active.png",
+      //   "text": "发现"
+      // },
       {
         "key": "me",
         "iconPath": "/images/icon_me.png",
@@ -133,12 +135,12 @@ Page({
     console.log(app.globalData.windowWidth);
     var tmp = this.data.videoItemInfo;
     
-    // tmp.width = app.globalData.windowWidth * 0.88 * 0.5;
-    // tmp.height = tmp.width * 1.3;
     var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;
     console.log(app.globalData.windowHeight)
     tmp.height = (tmp1-10)/3;
     tmp.width = app.globalData.windowWidth*0.44 - 10;
+    tmp.fontHeight = (tmp.height - 10)*0.2;
+    tmp.iconAppHeight = (tmp.height)*0.7 - 10;
     this.setData({
       videoItemInfo:tmp,
       videoListHeight:tmp1
