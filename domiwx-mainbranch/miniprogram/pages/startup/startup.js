@@ -32,37 +32,9 @@ Page({
         //console.log(res);
         getApp().globalData.windowWidth = res.windowWidth;
         getApp().globalData.windowHeight = res.windowHeight;
-        //申请openid
-        cache.checkLocalStorage('login', res => {
-          if (res.errorcode == 0) {
-            wx.getStorage({
-              key: 'login',
-              success: function (res) {
-                console.log(res.data);
-                appdata.userinfo.wxid = res.data;
-                that.requestlogin();
-              },
-            })
-          }
-          else {
-            //向云服务器发送login申请
-            cache.callCloudFunc('login', (res) => {
-              //console.log(res);
-              if (res.errorcode == 0) {
-                console.log(res.res.result.openid);
-                wx.setStorage({
-                  key: 'login',
-                  data: res.res.result.openid,
-                });
-                appdata.userinfo.wxid = res.data;
-                that.requestlogin();
-              }
-              else {
-                console.error(errorode)
-              }
-            })
-          }
-        });          
+        wx.navigateTo({
+            url: '../mainpage/mainpage',
+        })
       },
       fail:function(res){
         wx.hideLoading();
@@ -76,41 +48,6 @@ Page({
     })
   },
 
-  requestlogin:function() {
-    console.log('requestlogin::appdata', appdata);
-    httputil.httpClient( app.globalData.httpaddr + 'login/', (error, data) => {
-        if(data.errorcode == 0) {
-          console.log ('服务器返回登陆数据:',data.data);
-
-          //保存广告信息
-          var advert = appdata.advert = data.data.advert;
-          for(var i = 0; i < advert.length; i++) {
-            appdata.advert[i].bgurl = appdata.httpimg + 'bc/' + advert[i].bgurl;
-          }
-
-          //保存产品介绍
-          var cmpinfo = appdata.cmpinfo = data.data.cmpinfo;
-          for (var i = 0; i < cmpinfo.length; i++) {
-            appdata.cmpinfo[i].bgurl = appdata.httpimg + 'cmpinfo/' + cmpinfo[i].bgurl;
-          }
-          console.log('公司介绍:', appdata.cmpinfo);
-
-          //保存成功案例v2
-          var sucpros = appdata.sucpros = data.data.sucpros;
-          for(var i = 0; i< sucpros.length; i++) {
-            var m = sucpros[i];
-            m.frontIconUrl = appdata.httpimg + 'sucpro/' + m.frontIconUrl;
-            m.videoUrl = appdata.httpimg + 'sucpro/' + m.videoUrl;
-            appdata.sucpros[i] = m;
-          }
-          console.log('成功案例v2:', appdata.sucpros);
-          // wx.navigateTo({
-          //   url: '../mainpage/mainpage',
-          // })
-        }
-        wx.hideLoading();
-    });
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -297,5 +234,42 @@ Page({
   //       getApp().globalData.logindata = t;
   //       //console.log(t);
   //     }
+  //   });
+  // },
+
+
+
+
+  // requestlogin:function() {
+  //   console.log('requestlogin::appdata', appdata);
+  //   httputil.httpClient( app.globalData.httpaddr + 'login/', (error, data) => {
+  //       if(data.errorcode == 0) {
+  //         console.log ('服务器返回登陆数据:',data.data);
+
+  //         //保存广告信息
+  //         var advert = appdata.advert = data.data.advert;
+  //         for(var i = 0; i < advert.length; i++) {
+  //           appdata.advert[i].bgurl = appdata.httpimg + 'bc/' + advert[i].bgurl;
+  //         }
+
+  //         //保存产品介绍
+  //         var cmpinfo = appdata.cmpinfo = data.data.cmpinfo;
+  //         for (var i = 0; i < cmpinfo.length; i++) {
+  //           appdata.cmpinfo[i].bgurl = appdata.httpimg + 'cmpinfo/' + cmpinfo[i].bgurl;
+  //         }
+  //         console.log('公司介绍:', appdata.cmpinfo);
+
+  //         //保存成功案例v2
+  //         var sucpros = appdata.sucpros = data.data.sucpros;
+  //         for(var i = 0; i< sucpros.length; i++) {
+  //           var m = sucpros[i];
+  //           m.frontIconUrl = appdata.httpimg + 'sucpro/' + m.frontIconUrl;
+  //           m.videoUrl = appdata.httpimg + 'sucpro/' + m.videoUrl;
+  //           appdata.sucpros[i] = m;
+  //         }
+  //         console.log('成功案例v2:', appdata.sucpros);
+         
+  //       }
+  //       wx.hideLoading();
   //   });
   // },

@@ -79,7 +79,8 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    app.loginprocess(options, that.requestmainpage);
+    //app.loginprocess(options, that.requestmainpage);
+    that.requestmainpage();
   },
   
   //请求主页信息
@@ -102,22 +103,17 @@ Page({
           }
           //console.log('公司介绍:', appdata.cmpinfo);
           //保存成功案例
-          var sucpro = appdata.sucpro = data.data.sucpro;
+          var sucpro = appdata.sucpros = data.data.sucpros;
           for (var i = 0; i < sucpro.length; i++) {
-            var t = sucpro[i];
-            for (var j = 0; j < t.list.length; j++) {
-              var m = t.list[j];
-              m.fronticonurl = appdata.httpimg + 'sucpro/' + m.fronticonurl;
-              for (var k = 0; k < m.imgarray.length; k++) {
-                m.imgarray[k] = appdata.httpimg + 'sucpro/' + m.imgarray[k];
-              }
-            }
+            var m = sucpro[i];
+            m.fronticonurl = appdata.httpimg + 'sucpro/' + m.fronticonurl;
+
           }
           if(appdata.isdebug) {
             console.log('成功案例', sucpro);
           }
           //初始化页面信息
-          this.initmainpage();
+          //this.initmainpage();
         }
         else {
           wx.showToast({
