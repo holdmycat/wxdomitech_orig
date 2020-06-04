@@ -55,14 +55,18 @@ Page({
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
-
+    wx.reLaunch({
+      url: '../mainpage/mainpage',
+    })
   },
 
   /**
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
-
+    wx.reLaunch({
+      url: '../mainpage/mainpage',
+    })
   },
 
   /**

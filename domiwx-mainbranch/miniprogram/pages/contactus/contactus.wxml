@@ -71,7 +71,7 @@
       >
         <input placeholder='官网:www.domitech.com.cn' 
               placeholder-class="placeholder" 
-              style="width:360rpx;"
+              style="width:400rpx;"
               class="placeholder"
               disabled='true'
               id="0"

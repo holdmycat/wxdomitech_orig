@@ -55,6 +55,7 @@ Page({
     ],
     totalVideoList:[
     ],
+    
     tabbar: {
       "color": "#999999",
       "selectedColor": "#7788dd",
@@ -64,33 +65,39 @@ Page({
         "key": "home",
         "iconPath": "/images/icon_home.png",
         "selectedIconPath": "/images/icon_home_active.png",
+        "iconType": "",
         "text": "首页"
       },
       // {
-      //   "key": "share",
+      //   "key": "post",
       //   "iconPath": "/images/icon_tag.png",
       //   "selectedIconPath": "/images/icon_tag_active.png",
-      //   "text": "转发赚佣金"
+      //   "iconType": "",
+      //   "text": "发布需求"
       // },
       {
-        "key": "post",
+        "key": "share",
+        "iconPath": "/images/share.png",
         "iconType": "big overflow circle shadow",
-        "text": "发布需求"
+        "text": "转发赚钱"
+      },
+      {
+        "key": "contact",
+        "iconPath": "/images/icon_notebook.png",
+        "selectedIconPath": "/images/icon_notebook_active.png",
+        "iconType": "",
+        "text": "联系我们"
       },
       // {
-      //   "key": "discover",
-      //   "iconPath": "/images/icon_notebook.png",
-      //   "selectedIconPath": "/images/icon_notebook_active.png",
-      //   "text": "发现"
-      // },
-      {
-        "key": "me",
-        "iconPath": "/images/icon_me.png",
-        "selectedIconPath": "/images/icon_me_active.png",
-        "text": "个人信息"
-      }
+      //   "key": "me",
+      //   "iconPath": "/images/icon_me.png",
+      //   "selectedIconPath": "/images/icon_me_active.png",
+      //   "iconType": "",
+      //   "text": "个人信息"
+      // }
       ]
     },
+    
     videoListHeight:0
   },
 
@@ -166,9 +173,28 @@ Page({
         })
       }
   });
-
-
   },
+
+
+  tabChange : function (e) {
+    console.log(123)
+    var key = e.detail.key
+    console.log("key:" + key)
+    var that = this;
+    switch (key) {
+      case 'home':{
+        break;
+      }
+      case 'contact':{
+        wx.navigateTo({
+          url: '../contactus/contactus',
+        })
+        break;
+      }
+     
+    }
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
