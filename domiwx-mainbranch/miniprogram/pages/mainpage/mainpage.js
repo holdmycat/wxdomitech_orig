@@ -133,10 +133,11 @@ Page({
     console.log(app.globalData.windowWidth);
     var tmp = this.data.videoItemInfo;
     
-    tmp.width = app.globalData.windowWidth * 0.88 * 0.5;
-    tmp.height = tmp.width * 1.3;
-    var tmp1 = app.globalData.windowHeight - 40 - 110;
+    // tmp.width = app.globalData.windowWidth * 0.88 * 0.5;
+    // tmp.height = tmp.width * 1.3;
+    var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;
     console.log(app.globalData.windowHeight)
+    tmp.height = tmp1/3 -10;
     this.setData({
       videoItemInfo:tmp,
       videoListHeight:tmp1

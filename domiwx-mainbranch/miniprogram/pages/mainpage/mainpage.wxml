@@ -1,12 +1,12 @@
   <!-- 标题 -->
   <view >
     <!-- 横向图标 + 文字描述 -->
-    <view class="layout_horizontal" style="padding-bottom:20px;">
+    <view class="layout_horizontal" style="padding-bottom:10px;">
       <view class = "image">
       <image  src='/images/logo-512.png' mode="aspectFit"></image>
       </view>
       <view class = "image, .td">
-        <text style='font-size: 20px; padding-top:15px'>DOMITECH</text>
+        <text style='font-size: 20px; padding-top:10px'>DOMITECH</text>
       </view>
     </view>
   </view>
@@ -17,21 +17,12 @@
       <view class='item' wx:for="{{list}}">
         <view class = 'price' bindtap='selected' id = "{{item.id}}">
         <image style='width:40px;height:40px' src='{{item.imgurl}}'></image>  
-        <!-- <text class ='font'>{{item.name}}</text>   -->
         <view class="{{item.state?'underline':'default'}}, font2" >{{item.name}}</view>
         </view>   
       </view> 
     </view>
   </view>
 
-   <!-- 视频列表 -->
-  <!-- <view class='list2' style='padding-top:15px'>
-    <view class='item' wx:for="{{videoList}}">
-      <view class = 'price' bindtap='selected' id = "{{item.id}}">
-          <image style='width:{{videoItemInfo.width}}px;height:{{videoItemInfo.height}}px' src='/images/videobg.png' mode = scaleToFill></image>   
-      </view>   
-    </view> 
-  </view> -->
 <scroll-view 
       class = 'scrollPart'
       scroll-y = 'true'
@@ -39,14 +30,14 @@
       bindscrolltoupper="upper" 
       bindscrolltolower="lower"   
   >
-<view style="width:100%;height:{{videoListHeight}}px;">
+    <view style = "padding-top:10px">
     <block wx:for="{{videoList}}" wx:key="{{index}}" wx:for-item="item">
-    <view class="mod-item" >
-          <view class="flex-wrp shadow" style="margin-left:5%;width:100%;height:240rpx;border-radius:20rpx"bindtap='tapsucpro'  id = '{{item.id}}'>   
-          </view>
+      <view class="mod-item" style="height:{{videoItemInfo.height + 10}}px" >
+        <view class="flex-wrp shadow" style="margin-left:5%;width:100%;height:{{videoItemInfo.height}}px;border-radius:20rpx"bindtap='tapsucpro'  id = '{{item.id}}'>   
+        </view>
       </view>
     </block>
-</view>
+    </view>
 </scroll-view>
 
  
