@@ -6,7 +6,7 @@
 <scroll-view 
       class = 'scrollPart'
       scroll-y = 'true'
-      style="height: {{scrollHeight}}px;"
+      style="height:{{scrollHeight}}px;background-color:000f;"
       bindscrolltoupper="upper" 
       bindscrolltolower="lower"   
   >
