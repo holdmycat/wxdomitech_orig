@@ -1,3 +1,14 @@
+
+
+<video id = 'bc-video' 
+            initial-time="{{inittime}}"
+            autoplay = '{{autoplayv1}}' 
+            src = 'http://127.0.0.1:6001/video/game/game1.mp4'
+            style='position:fixed;top:0;height:{{swiperHeight}}px; width:100%;z-index:15;margin-top:50%;'
+            bindpause = 'bindpause'
+            bindPlay = 'bindPlay'
+            bindended = 'bindended' />
+<!-- 
 <import src="../common/register/register.wxml" />
 
 <view wx:if='{{registerdata.isShow == true}}'>
@@ -27,10 +38,10 @@
     delete pro
 </view>
 
-<button open-type="contact" bindcontact="handleContact">12</button>
+<button open-type="contact" bindcontact="handleContact">12</button> -->
 
 
 
 
 
-<!-- <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar> -->
+<tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>

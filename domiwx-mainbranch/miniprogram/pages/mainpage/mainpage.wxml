@@ -1,0 +1,52 @@
+  <!-- 标题 -->
+  <view >
+    <!-- 横向图标 + 文字描述 -->
+    <view class="layout_horizontal" style="padding-bottom:20px;">
+      <view class = "image">
+      <image  src='/images/logo-512.png' mode="aspectFit"></image>
+      </view>
+      <view class = "image, .td">
+        <text style='font-size: 20px; padding-top:15px'>DOMITECH</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 产皮品类 -->
+  <view>
+    <view class='list'>
+      <view class='item' wx:for="{{list}}">
+        <view class = 'price' bindtap='selected' id = "{{item.id}}">
+        <image style='width:40px;height:40px' src='{{item.imgurl}}'></image>  
+        <!-- <text class ='font'>{{item.name}}</text>   -->
+        <view class="{{item.state?'underline':'default'}}, font2" >{{item.name}}</view>
+        </view>   
+      </view> 
+    </view>
+  </view>
+
+   <!-- 视频列表 -->
+  <view class='list2' style='padding-top:15px'>
+    <view class='item' wx:for="{{videoList}}">
+      <view class = 'price' bindtap='selected' id = "{{item.id}}">
+          <image style='width:{{videoItemInfo.width}}px;height:{{videoItemInfo.height}}px' src='/images/videobg.png' mode = scaleToFill></image>   
+      </view>   
+    </view> 
+  </view>
+
+  <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>
+
+  
+
+ 
+
+
+
+
+  
+ 
+
+
+
+  
+   
+  

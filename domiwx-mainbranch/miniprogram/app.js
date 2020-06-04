@@ -35,6 +35,20 @@ App({
         // httpaddr:'https://see-future.com/',
         // httpimg: 'https://see-future.com/domiwx/',
     }
+    
+    var _this = this;
+    wx.getSystemInfo({
+      success:function(res){
+        _this.globalData.windowWidth = res.windowWidth;
+        _this.globalData.windowHeight = res.windowHeight;
+      },
+      fail:function(res){
+
+      },
+      complete:function(res){
+
+      }
+    })
   },
  
   UserInfo: function () {
