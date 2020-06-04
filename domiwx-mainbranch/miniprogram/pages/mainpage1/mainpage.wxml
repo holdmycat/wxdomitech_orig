@@ -88,7 +88,6 @@
             </view>
           </block>        
         </view> 
-
       </view>  
 
       <block wx:for="{{cursucpro.list}}" wx:key="{{index}}" wx:for-item="item">

@@ -138,6 +138,7 @@ Page({
     var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;
     console.log(app.globalData.windowHeight)
     tmp.height = (tmp1-10)/3;
+    tmp.width = app.globalData.windowWidth*0.44 - 10;
     this.setData({
       videoItemInfo:tmp,
       videoListHeight:tmp1
