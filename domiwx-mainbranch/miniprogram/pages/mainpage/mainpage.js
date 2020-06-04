@@ -139,8 +139,9 @@ Page({
     console.log(app.globalData.windowHeight)
     tmp.height = (tmp1-10)/3;
     tmp.width = app.globalData.windowWidth*0.44 - 10;
-    tmp.fontHeight = (tmp.height - 10)*0.2;
-    tmp.iconAppHeight = (tmp.height)*0.7 - 10;
+
+    tmp.fontHeight = (tmp.height - tmp.width*0.5)*0.3;
+    tmp.iconAppHeight = (tmp.height- tmp.width*0.5)*0.6 - tmp.fontHeight;
     this.setData({
       videoItemInfo:tmp,
       videoListHeight:tmp1

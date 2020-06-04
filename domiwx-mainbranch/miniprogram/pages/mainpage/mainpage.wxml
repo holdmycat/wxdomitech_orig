@@ -38,11 +38,11 @@
                   src="/images/vr1.png" >
           </image>
 
-          <view style = "margin-left:5px;width:100%;font-size:10px;">VR Outdoor Cinem</view>
+          <view style = "margin-left:5px;width:100%;height:10px;font-size:8px;">VR Outdoor CinemVR </view>
+          <view style = "margin-left:5px;width:100%;font-size:6px;color:#babec3;">2020.4.45-北京</view>
           
-          <view style = "padding-top:1%;"></view>
-          <view class='item' wx:for="{{list}}" style="margin-left:5px;">
-            <image style='width:20px;height:20px' src='{{item.imgurl}}'></image>  
+          <view  wx:for="{{list}}" style="margin-left:5px;">
+            <image style='width:{{videoItemInfo.iconAppHeight}}px;height:{{videoItemInfo.iconAppHeight}}px' src='{{item.imgurl}}'></image>  
           </view> 
 
 
