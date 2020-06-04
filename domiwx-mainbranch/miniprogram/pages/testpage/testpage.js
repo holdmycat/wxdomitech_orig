@@ -50,6 +50,33 @@ Page({
       }
       ]
     },
+    signupimg:"/images/videobg.png",
+    videoList:[
+      {
+        id:"0",
+      },
+      {
+        id:"1",
+      },
+      {
+        id:"2",
+      },
+      {
+        id:"3",
+      },
+      {
+        id:"0",
+      },
+      {
+        id:"1",
+      },
+      {
+        id:"2",
+      },
+      {
+        id:"3",
+      },
+    ],
   },
 
   handleContact(e) {
@@ -63,6 +90,7 @@ Page({
     new register (this, 'registerdata');
     //注册回调函数
     this.data.registerdata.backaction = "backaction";
+    
   },
 
   //创建项目

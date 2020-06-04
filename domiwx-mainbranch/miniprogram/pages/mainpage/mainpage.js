@@ -107,6 +107,7 @@ Page({
       }
       ]
     },
+    videoListHeight:0
   },
 
   selected: function (e) { 
@@ -134,8 +135,11 @@ Page({
     
     tmp.width = app.globalData.windowWidth * 0.88 * 0.5;
     tmp.height = tmp.width * 1.3;
+    var tmp1 = app.globalData.windowHeight - 40 - 110;
+    console.log(app.globalData.windowHeight)
     this.setData({
-      videoItemInfo:tmp
+      videoItemInfo:tmp,
+      videoListHeight:tmp1
     })
   },
 

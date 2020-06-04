@@ -2,5 +2,5 @@
   "usingComponents": {
     "tabbar": "/components/tabbar/tabbar"
   },
-  "disableScroll": true
+  "enablePullDownRefresh": true
 }

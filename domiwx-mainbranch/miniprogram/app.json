@@ -5,7 +5,7 @@
     "pages/payment/payment",
     "pages/itemlist/itemlist",
     "pages/scrollview/scrollview",
-   
+    "pages/testpage/testpage",
     "pages/register/register",
     "pages/poster/poster",
     "pages/contactus/contactus",
@@ -13,7 +13,7 @@
     "pages/releaserequirement/releaserequirement",
     "pages/proinfo/proinfo",
     "pages/index/index",
-    "pages/testpage/testpage",
+    
     "pages/startup/startup"
   ],
   "window": {
