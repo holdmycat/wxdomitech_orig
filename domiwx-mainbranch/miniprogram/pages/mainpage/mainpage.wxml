@@ -30,7 +30,7 @@
       style="height:{{videoListHeight}}px;"
   >
     <view style = "padding-top:10px">
-    <block wx:for="{{videoList}}" wx:key="index" wx:for-item="item">
+    <block wx:for="{{curVideoList.list}}" wx:key="index" wx:for-item="item">
       <view class="mod-item" style="height:{{videoItemInfo.height + 10}}px" >
         <view class="flex-wrp shadow" style="margin-left:5%;width:100%;height:{{videoItemInfo.height}}px;"bindtap='tapsucpro'  id = '{{item.id}}'>   
 

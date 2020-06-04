@@ -4,6 +4,7 @@ var config = require('../../utils/config.js')
 var app = getApp();
 var appdata = app.globalData;
 const httputil = require('../../utils/http.js');
+
 const register = require('../common/register/register.js');
 
 Page({

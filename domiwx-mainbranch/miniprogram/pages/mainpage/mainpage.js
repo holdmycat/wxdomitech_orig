@@ -1,4 +1,9 @@
 // miniprogram/pages/mainpage/mainpage.js
+
+var app = getApp();
+var appdata = app.globalData;
+const httputil = require('../../utils/http.js');
+
 Page({
 
   /**
@@ -46,32 +51,9 @@ Page({
       fontHeight:0,//字体高度
       iconAppHeight:0,//app类型高度
     },
-    
-    videoList:[
-      {
-        id:"0",
-      },
-      {
-        id:"1",
-      },
-      {
-        id:"2",
-      },
-      {
-        id:"3",
-      },
-      {
-        id:"0",
-      },
-      {
-        id:"1",
-      },
-      {
-        id:"2",
-      },
-      {
-        id:"3",
-      },
+    curVideoList:[
+    ],
+    totalVideoList:[
     ],
     tabbar: {
       "color": "#999999",
@@ -120,39 +102,79 @@ Page({
       tmp[this.data.curIndex].state = 0;
     }
     tmp[nId].state = 1;
-    this.setData({
-      list:tmp,
-      curIndex:nId
-    });
+    var tmp1 = this.data.totalVideoList[nId]
+    if(nId > this.data.totalVideoList.length - 1) {
+      var tmp2 = {
+        list:[]
+      }
+      this.setData({
+        list:tmp,
+        curIndex:nId,
+        curVideoList:tmp2
+      });
+    }
+    else {
+      this.setData({
+        list:tmp,
+        curIndex:nId,
+        curVideoList:tmp1
+      });
+    }
+    
   },
    
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;
-    var app = getApp()
-    console.log(app.globalData.windowWidth);
+   
     var tmp = this.data.videoItemInfo;
-    
     var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;
     console.log(app.globalData.windowHeight)
     tmp.height = (tmp1-10)/3;
     tmp.width = app.globalData.windowWidth*0.44 - 10;
-
     tmp.fontHeight = (tmp.height - tmp.width*0.5)*0.3;
     tmp.iconAppHeight = (tmp.height- tmp.width*0.5)*0.5 - tmp.fontHeight;
     this.setData({
       videoItemInfo:tmp,
       videoListHeight:tmp1
     })
+    var _this = this;
+    httputil.httpClient(app.globalData.httpaddr + 'mainpage', (error, data) => {
+      console.log('请求主页信息', data);
+      if (data.errorcode == 0) {
+        //服务器返回视频数据
+        var tmp = data.data.sucpros;
+
+        //初始化主页面
+        var tmp1 = tmp[_this.data.curIndex];
+
+        _this.setData({
+          totalVideoList:tmp,
+          curVideoList:tmp1
+        })
+        wx.hideLoading({
+          complete: (res) => {},
+        })
+        
+      }
+      else {
+        wx.showToast({
+          title: '数据错误',
+          duration:1500,
+          mask:true,
+        })
+      }
+  });
+
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
