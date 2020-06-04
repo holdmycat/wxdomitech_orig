@@ -137,7 +137,7 @@ Page({
     // tmp.height = tmp.width * 1.3;
     var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;
     console.log(app.globalData.windowHeight)
-    tmp.height = tmp1/3 -10;
+    tmp.height = (tmp1-10)/3;
     this.setData({
       videoItemInfo:tmp,
       videoListHeight:tmp1

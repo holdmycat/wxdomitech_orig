@@ -27,8 +27,6 @@
       class = 'scrollPart'
       scroll-y = 'true'
       style="height:{{videoListHeight}}px;"
-      bindscrolltoupper="upper" 
-      bindscrolltolower="lower"   
   >
     <view style = "padding-top:10px">
     <block wx:for="{{videoList}}" wx:key="{{index}}" wx:for-item="item">
