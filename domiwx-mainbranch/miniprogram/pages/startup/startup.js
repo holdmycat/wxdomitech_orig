@@ -78,40 +78,38 @@ Page({
 
   requestlogin:function() {
     console.log('requestlogin::appdata', appdata);
-    httputil.httpClient( app.globalData.httpaddr + 'login/' +
-      appdata.userinfo.wxid + '/' +
-      appdata.userinfo.upwxid, (error, data) => {
+    httputil.httpClient( app.globalData.httpaddr + 'login/', (error, data) => {
         if(data.errorcode == 0) {
           console.log ('服务器返回登陆数据:',data.data);
 
           //保存广告信息
-          var advert = appdata.advert = data.data.advert;
-          for(var i = 0; i < advert.length; i++) {
-            appdata.advert[i].bgurl = appdata.httpimg + 'bc/' + advert[i].bgurl;
-          }
+          // var advert = appdata.advert = data.data.advert;
+          // for(var i = 0; i < advert.length; i++) {
+          //   appdata.advert[i].bgurl = appdata.httpimg + 'bc/' + advert[i].bgurl;
+          // }
 
           //保存产品介绍
-          var cmpinfo = appdata.cmpinfo = data.data.cmpinfo;
-          for (var i = 0; i < cmpinfo.length; i++) {
-            appdata.cmpinfo[i].bgurl = appdata.httpimg + 'cmpinfo/' + cmpinfo[i].bgurl;
-          }
-          console.log('公司介绍:', appdata.cmpinfo);
+          // var cmpinfo = appdata.cmpinfo = data.data.cmpinfo;
+          // for (var i = 0; i < cmpinfo.length; i++) {
+          //   appdata.cmpinfo[i].bgurl = appdata.httpimg + 'cmpinfo/' + cmpinfo[i].bgurl;
+          // }
+          // console.log('公司介绍:', appdata.cmpinfo);
+
           //保存成功案例v2
-          var sucpro = appdata.sucpro = data.data.sucpro;
-          for(var i = 0; i< sucpro.length; i++) {
-            var t = sucpro[i];
-            for(var j = 0; j< t.list.length;j++) {
-                var m = t.list[j];
-                m.fronticonurl = appdata.httpimg + 'sucpro/' + m.fronticonurl;
-                for(var k = 0;k< m.imgarray.length; k++) {
-                  m.imgarray[k] = appdata.httpimg + 'sucpro/' + m.imgarray[k];
-                }
-            }
-          }
-          console.log('成功案例v2:', appdata.sucpro);
-          wx.navigateTo({
-            url: '../mainpage/mainpage',
-          })
+          // var sucpro = appdata.sucpro = data.data.sucpro;
+          // for(var i = 0; i< sucpro.length; i++) {
+          //   var t = sucpro[i];
+          //   for(var j = 0; j< t.list.length;j++) {
+          //       var m = t.list[j];
+          //       m.frontIconUrl = appdata.httpimg + 'sucpro/' + m.frontIconUrl;
+          //       m.videoUrl = appdata.httpimg + 'sucpro/' + m.videoUrl;
+          //       appdata.sucpros[i] = m;
+          //   }
+          // }
+          // console.log('成功案例v2:', appdata.sucpros);
+          // wx.navigateTo({
+          //   url: '../mainpage/mainpage',
+          // })
         }
         wx.hideLoading();
     });

@@ -8,10 +8,10 @@ App({
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
-      wx.cloud.init({
-        env: "domitech-software-54dff5",//这个就是环境id
-        traceUser: true,
-      })
+      // wx.cloud.init({
+      //   env: "domitech-software-54dff5",//这个就是环境id
+      //   traceUser: true,
+      // })
     }
      
     this.globalData = {

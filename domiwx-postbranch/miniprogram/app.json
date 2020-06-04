@@ -17,5 +17,6 @@
     "backgroundColor": "#fff",
     "enablePullDownRefresh": false,
     "cloud": "true"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

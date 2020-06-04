@@ -117,7 +117,7 @@
       >
         <input placeholder='{{postarray[2].name}}' 
               placeholder-class="placeholder" 
-              style="width:360rpx;
+              style="width:360rpx;"
               class="placeholder"
               bindblur="inputlosefocus"
               id="0"

@@ -71,7 +71,7 @@
       >
         <input placeholder='官网:www.domitech.com.cn' 
               placeholder-class="placeholder" 
-              style="width:360rpx;
+              style="width:360rpx;"
               class="placeholder"
               disabled='true'
               id="0"
@@ -101,7 +101,7 @@
       >
         <input placeholder='商务联系人微信' 
               placeholder-class="placeholder" 
-              style="width:360rpx;
+              style="width:360rpx;"
               class="placeholder"
               disabled='true'
               id="0"
@@ -114,6 +114,8 @@
       <image style="margin-left:22rpx;width:200rpx;height:200rpx;margin-right:4%;margin-top:0rpx;"
             src="{{busimgurl}}"
             mode="aspectfit"
+            bindtap="previewImage"
+            id="0"
       >
       </image>
       
@@ -136,7 +138,7 @@
       >
         <input placeholder='哆米业务微信公众号' 
               placeholder-class="placeholder" 
-              style="width:360rpx;
+              style="width:360rpx;"
               class="placeholder"
               disabled='true'
               id="0"
@@ -147,8 +149,10 @@
       </view>
 
       <image style="margin-left:22rpx;width:200rpx;height:200rpx;margin-right:4%;margin-top:0rpx;"
-            src="{{busimgurl}}"
+            src="{{webimgurl}}"
             mode="aspectfit"
+            bindtap="previewImage"
+            id="1"
       >
       </image>
       

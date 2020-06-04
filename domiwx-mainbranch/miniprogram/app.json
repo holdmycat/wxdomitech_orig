@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/payment/payment",
+    "pages/startup/startup",
     "pages/mainpage/mainpage",
+    "pages/payment/payment",
     "pages/itemlist/itemlist",
     "pages/scrollview/scrollview",
     "pages/testpage/testpage",
@@ -12,7 +13,6 @@
     "pages/releaserequirement/releaserequirement",
     "pages/proinfo/proinfo",
     "pages/index/index"
-    
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -22,5 +22,6 @@
     "backgroundColor": "#fff",
     "enablePullDownRefresh": false,
     "cloud": "true"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

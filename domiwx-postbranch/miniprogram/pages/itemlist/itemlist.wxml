@@ -81,7 +81,7 @@
         <view style="display:flex;">   
           <view style='display:block'>
               <view class='text'
-                    style='font-size:30rpx;margin-left:30rpx;margin-top:80rpx;width:100rpx;
+                    style='font-size:30rpx;margin-left:30rpx;margin-top:80rpx;width:100rpx;'
               >{{item.name}}</view>
           </view>
         </view>
