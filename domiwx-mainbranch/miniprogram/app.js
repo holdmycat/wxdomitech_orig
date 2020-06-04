@@ -27,6 +27,9 @@ App({
         windowHeight:0,//高度
         windowWidth:0,//宽度
         userinfo:{},//用戶信息
+        advert : [],//广告信息
+        cmpinfo:[],//公司产品介绍
+        sucpros:[],//产品列表 
         httpaddr: 'http://127.0.0.1:6001/',
         httpimg: 'http://127.0.0.1:6001/domiwx/',
         // httpaddr:'https://see-future.com/',
