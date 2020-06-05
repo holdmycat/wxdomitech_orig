@@ -1,5 +1,5 @@
 
-<view class="appointment">
+<!-- <view class="appointment">
   <view class="app-moduler">
     <view style="width:100%;height:100%" wx:for="{{videoList}}">
       <navigator url="url" class="mod-item">
@@ -8,18 +8,16 @@
       </navigator>
     </view>
    </view>
-</view>
+</view> -->
 
-
-<!-- 
-<video id = 'bc-video' 
+<!-- <video id = 'bc-video' 
             initial-time="{{inittime}}"
             autoplay = '{{autoplayv1}}' 
             src = 'http://127.0.0.1:6001/video/game/game1.mp4'
             style='position:fixed;top:0;height:{{swiperHeight}}px; width:100%;z-index:15;margin-top:50%;'
             bindpause = 'bindpause'
             bindPlay = 'bindPlay'
-            bindended = 'bindended' /> -->
+            bindended = 'bindended' />  -->
 <!-- 
 <import src="../common/register/register.wxml" />
 

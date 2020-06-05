@@ -33,10 +33,12 @@ App({
         advert : [],//广告信息
         cmpinfo:[],//公司产品介绍
         sucpros:[],//产品列表 
-        // httpaddr: 'http://127.0.0.1:6001/',
-        // httpimg: 'http://127.0.0.1:6001/domiwx/',
-        httpaddr: 'http://123.57.240.55:6001/',
-        httpimg: 'http://123.57.240.55:6001/domiwx/',
+        httpaddr: 'http://127.0.0.1:6001/',
+        httpimg: 'http://127.0.0.1:6001/domiwx/',
+       
+        
+        // httpaddr: 'http://123.57.240.55:6001/',
+        // httpimg: 'http://123.57.240.55:6001/domiwx/',
         
         // httpaddr:'https://see-future.com/',
         // httpimg: 'https://see-future.com/domiwx/',

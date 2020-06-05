@@ -10,6 +10,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    videoHeight:0,
+    videoWidth:0,
+    videoLeft:0,
+    activecmpindex:0,
     curIndex: 0,
     list:[
       {
@@ -97,7 +101,7 @@ Page({
       // }
       ]
     },
-    
+    isfull: false,
     videoListHeight:0
   },
 
@@ -142,9 +146,17 @@ Page({
     tmp.width = app.globalData.windowWidth*0.44 - 10;
     tmp.fontHeight = (tmp.height - tmp.width*0.5)*0.3;
     tmp.iconAppHeight = (tmp.height- tmp.width*0.5)*0.5 - tmp.fontHeight;
+
+    var tmpVideoHeight = app.globalData.windowHeight * 0.8;
+    var tmpVideoWidth = tmpVideoHeight * 640 / 1136;
+    var tmpVideoLeft = (app.globalData.windowWidth - tmpVideoWidth) * 0.5;
+    console.log("tmpVideoWidth: " + tmpVideoWidth)
     this.setData({
       videoItemInfo:tmp,
-      videoListHeight:tmp1
+      videoListHeight:tmp1,
+      videoHeight:tmpVideoHeight,
+      videoWidth:tmpVideoWidth,
+      videoLeft:tmpVideoLeft
     })
     var _this = this;
     httputil.httpClient(app.globalData.httpaddr + 'mainpage', (error, data) => {
@@ -195,12 +207,41 @@ Page({
     }
   },
 
+  tapsucpro:function(e) {
+    console.log(e)
+    var id = e.currentTarget.id;
+    var nId = parseInt(id);
+    this.videoContext.seek(0);
+    var that = this;
+    that.data.isfull = !that.data.isfull;
+    that.setData({
+      isfull: that.data.isfull,
+      activecmpindex: nId,
+    });
+  },
+
+  closevideo:function(e) {
+    //console.log(e);
+    this.videoContext.pause();
+    this.setData({
+      isfull:false,
+    })
+  },
+  
+      
+
+
+
+
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+    this.videoContext = wx.createVideoContext('bc-video')
   },
 
   /**

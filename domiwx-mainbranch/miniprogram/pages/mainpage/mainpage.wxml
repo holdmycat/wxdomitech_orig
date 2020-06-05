@@ -43,10 +43,7 @@
 
           <view style = "margin-left:5px;width:100%;height:10px;font-size:8px;">VR Outdoor CinemVR </view>
           <view style = "margin-left:5px;width:100%;font-size:6px;color:#babec3;">2020.4.45-北京</view>
-          
-          <!-- <view  wx:for="{{list}}" style="margin-left:5px;">
-            <image style='width:{{videoItemInfo.iconAppHeight}}px;height:{{videoItemInfo.iconAppHeight}}px' src='{{item.imgurl}}'></image>  
-          </view>  -->
+    
         </view>
       </view>
     </block>
@@ -56,6 +53,48 @@
 <!-- tab页 -->
 <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>
 
+<view class="fullbg {{isfull ?'fullopacity':''}}" hidden="{{isfull?false:true}}">
+</view>
+
+
+<view hidden="{{isfull?false:true}}">
+  <view style="display:block;">
+    <view wx:if="{{curVideoList.list[activecmpindex].videorate == 1}}">
+      <video id = 'bc-video' 
+              initial-time="{{inittime}}"
+              autoplay = '{{autoplayv1}}' 
+              src = '{{curVideoList.list[activecmpindex].videoUrl}}'
+              style='position:fixed;top:0;height:{{videoHeight}}px; width:{{videoWidth}}px;z-index:15;margin-top:2%;margin-left:{{videoLeft}}px;'
+              custom-cache="false"
+              bindpause = 'bindpause'
+              bindPlay = 'bindPlay'
+              bindended = 'bindended' />
+      <button class="shadow2" 
+        style="z-index:15;line-height:80rpx;background-color:red;color:#fff;;width:240rpx;height:80rpx;margin-top:-15%;" 
+        bindtap="closevideo">
+        关闭
+      </button>
+    </view>
+    <view wx:elif="{{curVideoList.list[activecmpindex].videorate == 0}}">
+    <video id = 'bc-video' 
+              initial-time="{{inittime}}"
+              autoplay = '{{autoplayv1}}' 
+              custom-cache="false"
+              src = '{{curVideoList.list[activecmpindex].videoUrl}}'
+              style='position:fixed;top:0;height:{{swiperHeight}}px; width:100%;z-index:15;margin-top:50%;'
+              bindpause = 'bindpause'
+              bindPlay = 'bindPlay'
+              bindended = 'bindended' />
+      <button class="shadow2" 
+        style="z-index:15;line-height:80rpx;background-color:red;color:#fff;;width:240rpx;height:80rpx;margin-top:-15%;" 
+        bindtap="closevideo">
+        关闭
+      </button>
+    </view>
+  </view>
+</view>
+
+
   
 
  
@@ -63,6 +102,10 @@
 
 
 
+      
+          <!-- <view  wx:for="{{list}}" style="margin-left:5px;">
+            <image style='width:{{videoItemInfo.iconAppHeight}}px;height:{{videoItemInfo.iconAppHeight}}px' src='{{item.imgurl}}'></image>  
+          </view>  -->
   
  
 
