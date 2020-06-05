@@ -2,17 +2,9 @@
   "pages": [
    
     "pages/mainpage/mainpage",
-    "pages/payment/payment",
-    "pages/itemlist/itemlist",
-    "pages/scrollview/scrollview",
     "pages/testpage/testpage",
-    "pages/poster/poster",
-    "pages/contactus/contactus",
-    "pages/me/me",
-    "pages/releaserequirement/releaserequirement",
-    "pages/proinfo/proinfo",
+    "pages/contactus/contactus"
     
-    "pages/startup/startup"
   ],
   "window": {
     "navigationBarTextStyle": "black",

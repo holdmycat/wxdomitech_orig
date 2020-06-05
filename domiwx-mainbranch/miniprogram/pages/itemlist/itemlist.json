@@ -1,6 +1,0 @@
-{
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "i-load-more": "../../../components/iview/load-more/index"
-  }
-}
