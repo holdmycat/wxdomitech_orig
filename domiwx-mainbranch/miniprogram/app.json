@@ -2,7 +2,6 @@
   "pages": [
    
     "pages/mainpage/mainpage",
-    "pages/testpage/testpage",
     "pages/contactus/contactus"
     
   ],
