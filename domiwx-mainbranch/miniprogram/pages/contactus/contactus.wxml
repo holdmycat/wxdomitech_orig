@@ -55,8 +55,8 @@
   
 
 
-  <!--官网-->
-  <view class="shadow2 " 
+  <!--公司地址-->
+  <!-- <view class="shadow2 " 
         style="margin-bottom:10%;border-radius:10rpx;height:120rpx">
     <view style="display:flex;">
     
@@ -70,6 +70,35 @@
             style="color:#000;line-height:400%;font-size:30rpx;width:50%;margin-top:44rpx;margin-left:-13rpx;"
       >
         <input placeholder='官网:www.domitech.com.cn' 
+              placeholder-class="placeholder" 
+              style="width:400rpx;"
+              class="placeholder"
+              disabled='true'
+              id="0"
+              maxlength='10'
+              type='text'
+              >
+        </input>
+      </view>
+
+      
+    </view>
+  </view> -->
+
+  <view class="shadow2 " 
+        style="margin-bottom:10%;border-radius:10rpx;height:120rpx">
+    <view style="display:flex;">
+    
+      <image style="margin-left:22rpx;width:45rpx;height:50rpx;margin-right:4%;margin-top:50rpx;"
+            src="{{registarray[0].iconurl}}"
+            mode="aspectfit"
+      >
+      </image>
+      
+      <view class="text" 
+            style="color:#000;line-height:400%;font-size:30rpx;width:50%;margin-top:44rpx;margin-left:-13rpx;"
+      >
+        <input placeholder='河北省唐山市高新区软件园' 
               placeholder-class="placeholder" 
               style="width:400rpx;"
               class="placeholder"
