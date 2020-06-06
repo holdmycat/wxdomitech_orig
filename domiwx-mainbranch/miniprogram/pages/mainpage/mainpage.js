@@ -16,6 +16,7 @@ Page({
     videoLeft:0,
     activecmpindex:0,
     curIndex: 0,
+    logoaddr:'',
     list:[
       {
         id:"0",
@@ -166,7 +167,8 @@ Page({
       videoListHeight:tmp1,
       videoHeight:tmpVideoHeight,
       videoWidth:tmpVideoWidth,
-      videoLeft:tmpVideoLeft
+      videoLeft:tmpVideoLeft,
+      logoaddr:appdata.logourl
     })
     var _this = this;
     httputil.httpClient(app.globalData.httpaddr + 'mainpage', (error, data) => {

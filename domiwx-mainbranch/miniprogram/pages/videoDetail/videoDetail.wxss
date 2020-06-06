@@ -1,1 +1,20 @@
-/* miniprogram/pages/videoDetail/videoDetail.wxss */
+
+/*横向布局  */
+.layout_horizontal{
+  height: 100rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  padding-bottom: 10px;
+}
+
+.td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+image {
+  width: 60px;
+  height:60px;
+}

@@ -30,6 +30,7 @@ App({
         advert : [],//广告信息
         cmpinfo:[],//公司产品介绍
         sucpros:[],//产品列表 
+        logourl:"",
         // httpaddr: 'http://127.0.0.1:6001/',
         // httpimg: 'http://127.0.0.1:6001/domiwx/',
 
@@ -45,6 +46,7 @@ App({
     }
     
     var _this = this;
+    this.globalData.logourl = this.globalData.httpaddr + 'domiwx/icons/logo-128.png';
     wx.getSystemInfo({
       success:function(res){
         _this.globalData.windowWidth = res.windowWidth;

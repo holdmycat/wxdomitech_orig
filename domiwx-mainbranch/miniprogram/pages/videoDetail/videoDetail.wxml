@@ -1,1 +1,16 @@
+<!-- 标题 -->
+<view >
+  <!-- 横向图标 + 文字描述 -->
+  <view class="layout_horizontal" style="padding-bottom:10px;">
+    <view class = "image">
+    <image  src='{{logoaddr}}' mode="aspectFit"></image>
+    </view>
+    <view class = "image, .td">
+      <text style='font-size: 20px; padding-top:10px'>DOMITECH</text>
+    </view>
+  </view>
+</view>
+
+<view style='border-top:1px solid #EDEDED;padding-top:15px;'> </view>
+
 <button data-info='{{order}}'  open-type="share" hover-class='none'>分享</button>

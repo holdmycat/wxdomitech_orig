@@ -10,6 +10,7 @@ Page({
   data: {
     type:"",
     index:"",
+    logoaddr:'',
     videoContent:{}
   },
 
@@ -24,7 +25,8 @@ Page({
     this.setData({
       type:type,
       index:index,
-      videoContent:tmpContent
+      videoContent:tmpContent,
+      logoaddr:appdata.logourl
     })
     console.log("videoContent:" + this.data.videoContent.frontIconUrl);
   },

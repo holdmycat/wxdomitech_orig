@@ -21,6 +21,7 @@ height: 100%;
   padding-bottom: 10px;
 }
 
+
 .td {
   display: flex;
   align-items: center;
@@ -79,6 +80,7 @@ image {
   width: 60px;
   height:60px;
 }
+
 /*纵向布局  */
 .layout_vertical{
   height: 100rpx;
@@ -182,13 +184,7 @@ image {
   font-size: 20rpx;
 }
 
-.activeitem {
-    margin-top: 20rpx;
-    height: 5rpx;
-    width: 36rpx;
-    background-size: cover;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJEAAAACCAYAAABYKj7OAAAAAXNSR0ICQMB9xQAAAAlwSFlzAAAXEgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAAAdSURBVDjLY/Cq2/1/FI9isnHt7gSG0YAYxZQmIgAv7tYjQOg5nQAAAABJRU5ErkJggg==');
-  }
+
 
 .disappear {
   display: none;
