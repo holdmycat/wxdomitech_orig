@@ -1,9 +1,8 @@
 {
   "pages": [
-   
     "pages/mainpage/mainpage",
-    "pages/contactus/contactus"
-    
+    "pages/contactus/contactus",
+    "pages/videoDetail/videoDetail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

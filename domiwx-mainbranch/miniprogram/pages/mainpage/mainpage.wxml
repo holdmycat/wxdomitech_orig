@@ -50,8 +50,9 @@
 <!-- tab页 -->
 <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>
 
-<view class="fullbg {{isfull ?'fullopacity':''}}" hidden="{{isfull?false:true}}">
-</view>
+<!-- <view class="fullbg {{isfull ?'fullopacity':''}}" hidden="{{isfull?false:true}}">
+</view> -->
+
 
 
 <!-- <view hidden="{{isfull?false:true}}">

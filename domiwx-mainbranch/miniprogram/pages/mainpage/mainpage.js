@@ -2,6 +2,7 @@
 
 var app = getApp();
 var appdata = app.globalData;
+
 const httputil = require('../../utils/http.js');
 
 Page({
@@ -103,7 +104,6 @@ Page({
       // }
       ]
     },
-    isfull: false,
     videoListHeight:0
   },
 
@@ -157,7 +157,7 @@ Page({
     var tmpVideoHeight = app.globalData.windowHeight * 0.8;
     var tmpVideoWidth = tmpVideoHeight * 640 / 1136;
     var tmpVideoLeft = (app.globalData.windowWidth - tmpVideoWidth) * 0.5;
-    console.log("tmpVideoWidth: " + tmpVideoWidth)
+    
     this.setData({
       videoItemInfo:tmp,
       videoListHeight:tmp1,
@@ -182,7 +182,7 @@ Page({
 
         //初始化主页面
         var tmp1 = tmp[_this.data.curIndex];
-
+        appdata.sucpros = tmp;
         _this.setData({
           totalVideoList:tmp,
           curVideoList:tmp1
@@ -222,26 +222,44 @@ Page({
     }
   },
 
+
   tapsucpro:function(e) {
     console.log(e)
     var id = e.currentTarget.id;
     var nId = parseInt(id);
-    this.videoContext.seek(0);
-    var that = this;
-    that.data.isfull = !that.data.isfull;
-    that.setData({
-      isfull: that.data.isfull,
+    //this.videoContext.seek(0);
+    this.setData({
       activecmpindex: nId,
     });
-  },
-
-  closevideo:function(e) {
-    //console.log(e);
-    this.videoContext.pause();
-    this.setData({
-      isfull:false,
+    var type = "0";
+    var index = "0";
+    var des = "../videoDetail/videoDetail?type=" + type + "&index=" + index;
+    wx.navigateTo({
+      url: des,
     })
   },
+
+  // tapsucpro:function(e) {
+  //   console.log(e)
+  //   var id = e.currentTarget.id;
+  //   var nId = parseInt(id);
+  //   this.videoContext.seek(0);
+  //   var that = this;
+  //   that.data.isfull = !that.data.isfull;
+  //   that.setData({
+  //     isfull: that.data.isfull,
+  //     activecmpindex: nId,
+  //   });
+  // },
+
+  // closevideo:function(e) {
+  //   //console.log(e);
+  //   this.videoContext.pause();
+  //   this.setData({
+  //     isfull:false,
+  //   })
+  // },
+
   
       
 
@@ -256,7 +274,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.videoContext = wx.createVideoContext('bc-video')
+    //this.videoContext = wx.createVideoContext('bc-video')
   },
 
   /**
@@ -298,6 +316,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    console.log("onShareAppMessage")
   }
 })
