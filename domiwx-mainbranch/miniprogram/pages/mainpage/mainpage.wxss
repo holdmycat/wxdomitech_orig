@@ -221,10 +221,9 @@ image {
 
 
 .mod-item{
-  width:44%;
+  width:100%;
   /* height:250rpx; */
   float: left;
-  margin-left:20rpx;
   /* margin-top:20px; */
   position: relative;
  }

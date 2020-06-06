@@ -31,22 +31,19 @@
       scroll-y = 'true'
       style="height:{{videoListHeight}}px;"
   >
-    <view style = "padding-top:10px">
-    <block wx:for="{{curVideoList.list}}" wx:key="index" wx:for-item="item">
-      <view class="mod-item" style="height:{{videoItemInfo.height + 10}}px" >
-        <view class="flex-wrp shadow" style="margin-left:5%;width:100%;height:{{videoItemInfo.height}}px;"bindtap='tapsucpro'  id = '{{item.id}}'>   
-
-          <image 
-                  style='margin-left:5px;margin-top:2px;width:{{videoItemInfo.width}}px;height:{{videoItemInfo.width/2}}px'
-                  src="/images/vr1.png" >
-          </image>
-
-          <view style = "margin-left:5px;width:100%;height:10px;font-size:8px;">VR Outdoor CinemVR </view>
-          <view style = "margin-left:5px;width:100%;font-size:6px;color:#babec3;">2020.4.45-北京</view>
-    
+    <view style = "padding-top:15px">
+      <block wx:for="{{curVideoList.list}}" wx:key="index" wx:for-item="item">
+        <view class="mod-item" style="height:{{videoItemInfo.height + 10}}px" >
+          <view class="flex-wrp shadow" style="margin-left:5%;width:{{videoItemInfo.width}}px;height:{{videoItemInfo.height}}px;"bindtap='tapsucpro'  id = '{{item.id}}'>   
+            <image 
+                  style='margin-left:1%;margin-top:2px;width:{{videoItemInfo.frontIconWidth}}px;height:{{videoItemInfo.frontIconHeight}}px'
+                  src="{{item.frontIconUrl}}" >
+            </image>
+        
+      
+          </view>
         </view>
-      </view>
-    </block>
+      </block>
     </view>
 </scroll-view>
 
@@ -57,7 +54,7 @@
 </view>
 
 
-<view hidden="{{isfull?false:true}}">
+<!-- <view hidden="{{isfull?false:true}}">
   <view style="display:block;">
     <view wx:if="{{curVideoList.list[activecmpindex].videorate == 1}}">
       <video id = 'bc-video' 
@@ -92,9 +89,18 @@
       </button>
     </view>
   </view>
-</view>
+</view> -->
 
 
+
+
+   <!-- <image 
+                  style='margin-left:5px;margin-top:2px;width:{{videoItemInfo.width}}px;height:{{videoItemInfo.width/2}}px'
+                  src="/images/vr1.png" >
+          </image>
+
+          <view style = "margin-left:5px;width:100%;height:10px;font-size:8px;">VR Outdoor CinemVR </view>
+          <view style = "margin-left:5px;width:100%;font-size:6px;color:#babec3;">2020.4.45-北京</view> -->
   
 
  

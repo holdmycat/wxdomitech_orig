@@ -52,6 +52,8 @@ Page({
     videoItemInfo:{
       width:0,
       height:0,
+      frontIconWidth:0,
+      frontIconHeight:0,
       fontHeight:0,//字体高度
       iconAppHeight:0,//app类型高度
     },
@@ -140,10 +142,15 @@ Page({
   onLoad: function (options) {
    
     var tmp = this.data.videoItemInfo;
-    var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;
-    console.log(app.globalData.windowHeight)
-    tmp.height = (tmp1-10)/3;
-    tmp.width = app.globalData.windowWidth*0.44 - 10;
+    var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;//scrollview高度
+    
+    
+    tmp.width = app.globalData.windowWidth*0.9;
+    tmp.height = tmp.width / 1.4;
+
+    tmp.frontIconWidth = tmp.width*0.98;
+    tmp.frontIconHeight = tmp.frontIconWidth/2;
+
     tmp.fontHeight = (tmp.height - tmp.width*0.5)*0.3;
     tmp.iconAppHeight = (tmp.height- tmp.width*0.5)*0.5 - tmp.fontHeight;
 
@@ -164,6 +171,14 @@ Page({
       if (data.errorcode == 0) {
         //服务器返回视频数据
         var tmp = data.data.sucpros;
+
+        for(var i = 0; i < tmp.length; i++) {
+            var m = tmp[i].list;
+            for(var j = 0; j< m.length; j++) {
+                m[j].frontIconUrl = appdata.httpaddr + m[j].frontIconUrl;
+                m[j].videoUrl = appdata.httpaddr + m[j].videoUrl;
+            }
+        }
 
         //初始化主页面
         var tmp1 = tmp[_this.data.curIndex];
