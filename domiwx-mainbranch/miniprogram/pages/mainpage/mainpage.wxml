@@ -39,7 +39,8 @@
                   style='margin-left:1%;margin-top:2px;width:{{videoItemInfo.frontIconWidth}}px;height:{{videoItemInfo.frontIconHeight}}px'
                   src="{{item.frontIconUrl}}" >
             </image>
-        
+            <view style = "margin-left:5px;width:100%;height:10px;font-size:8px;">{{item.name}} </view>
+            <view style = "margin-left:5px;width:100%;font-size:6px;color:#babec3;">{{item.note}}</view>
       
           </view>
         </view>
