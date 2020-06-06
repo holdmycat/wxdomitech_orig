@@ -140,7 +140,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    wx.showLoading({
+      title: 'loading...',
+      mask:true
+    })
     var tmp = this.data.videoItemInfo;
     var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;//scrollview高度
     
@@ -193,6 +196,9 @@ Page({
         
       }
       else {
+        wx.hideLoading({
+          complete: (res) => {},
+        })
         wx.showToast({
           title: '数据错误',
           duration:1500,

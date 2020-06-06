@@ -74,7 +74,27 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
+    console.log(res)
+
+    return {
+      title: this.data.videoContent.name,
+      path: '/pages/videoDetail/videoDetail?type=' + this.data.type + "&index=" + this.data.index,
+     
+      success: function (res) {
+     // 转发成功
+          console.log('success');
+	      
+       },
+      fail: function (res) {
+        // 分享失败
+        console.log('fail');
+      
+      },
+      complete: function() {
+       
+      }
+    }
 
   }
 })

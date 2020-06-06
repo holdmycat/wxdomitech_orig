@@ -1,2 +1,1 @@
-<!--miniprogram/pages/videoDetail/videoDetail.wxml-->
-<text>miniprogram/pages/videoDetail/videoDetail.wxml</text>
+<button data-info='{{order}}'  open-type="share" hover-class='none'>分享</button>
