@@ -13,7 +13,7 @@ App({
       //   traceUser: true,
       // })
     }
- 
+    
     this.globalData = {
         //手机校验码-> 离开页面仍然需要继续校验，需要把数据做全局保存
         // phonecode: {
@@ -56,7 +56,7 @@ App({
 
       },
       complete:function(res){
-
+          console.log("app complete");
       }
     })
   },
