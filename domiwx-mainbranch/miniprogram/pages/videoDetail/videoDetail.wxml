@@ -40,6 +40,8 @@
 
 <view>
 
+<button open-type='contact'>点击进入客服会话</button>
+
   <button    
       class="share-btn"     
       type="primary"

@@ -39,6 +39,13 @@ Page({
     })
   },
 
+  previewImage:function() {
+    wx.previewImage({ 
+      current: this.data.webimgurl,
+      urls:[this.data.webimgurl]
+    })
+  },
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */
