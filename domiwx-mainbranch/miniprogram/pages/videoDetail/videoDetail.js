@@ -11,7 +11,8 @@ Page({
     type:"",
     index:"",
     logoaddr:'',
-    videoContent:{}
+    videoContent:{},
+    videoHeight:0,
   },
 
   /**
@@ -22,11 +23,13 @@ Page({
     var index = parseInt(options.index);
 
     var tmpContent = appdata.sucpros[type].list[index];
+    var tmpVideoHeight = appdata.windowWidth*0.9 * 640/1136;
     this.setData({
       type:type,
       index:index,
       videoContent:tmpContent,
-      logoaddr:appdata.logourl
+      logoaddr:appdata.logourl,
+      videoHeight:tmpVideoHeight
     })
     console.log("videoContent:" + this.data.videoContent.frontIconUrl);
   },
@@ -35,6 +38,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.videoContext = wx.createVideoContext('bc-video')
 
   },
 

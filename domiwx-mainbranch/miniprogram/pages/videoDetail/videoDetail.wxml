@@ -1,3 +1,4 @@
+
 <!-- 标题 -->
 <view >
   <!-- 横向图标 + 文字描述 -->
@@ -24,6 +25,39 @@
 <view style='border-top:1px solid #EDEDED;padding-top:15px;padding-bottom:15px;'> </view>
 
 
+ <video id = 'bc-video'    
+              custom-cache="false"
+              src = '{{videoContent.videoUrl}}'
+              style='height:{{videoHeight}}px; width:90%;margin-left:5%;'
+             
+/>
+
+<view style='border-top:1px solid #EDEDED; margin-top:15px;padding-bottom:15px;'> </view>
+
+<view style="width:90%;margin-left:5%;height:120px">
+  <text class="font"> - {{videoContent.descrip}}</text>
+</view>
+
+<view>
+
+  <button    
+      class="share-btn"     
+      type="primary"
+      open-type='share'>
+       <text  style="font-size:10px;color:#fff;"> -分享-</text>   
+   </button>
+</view>
+
+
+
+
+
+  <!-- initial-time="{{inittime}}"
+              autoplay = '{{autoplayv1}}'  -->
+
+               <!-- bindpause = 'bindpause'
+              bindPlay = 'bindPlay'
+              bindended = 'bindended' -->
 
 
 
