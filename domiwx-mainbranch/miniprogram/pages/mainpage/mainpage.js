@@ -210,7 +210,7 @@ Page({
         })
       }
   });
-  
+
   },
 
 
@@ -243,7 +243,7 @@ Page({
       activecmpindex: nId,
     });
     var type = "0";
-    var index = "0";
+    var index = nId;
     var des = "../videoDetail/videoDetail?type=" + type + "&index=" + index;
     wx.navigateTo({
       url: des,

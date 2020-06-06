@@ -14,7 +14,7 @@
        <text style='font-size: 13px; padding-top:10px;color:#909092;'>{{videoContent.note}}</text>
       </view >
         
-      <view style="padding-top:60px;">
+      <view style="">
         <text style='font-size: 10px; color:#909092;'>{{videoContent.date}}</text>
       </view>
 
