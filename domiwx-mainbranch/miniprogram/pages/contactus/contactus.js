@@ -23,6 +23,8 @@ Page({
     this.setData({
       upimgurl: appdata.httpimg + 'bg.png',
     });
+
+   
   },
 
   taphome:function(e) {
@@ -48,25 +50,21 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+   
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
-    wx.reLaunch({
-      url: '../mainpage/mainpage',
-    })
+   
   },
 
   /**
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
-    wx.reLaunch({
-      url: '../mainpage/mainpage',
-    })
+   
   },
 
   /**

@@ -24,12 +24,11 @@ Component({
       var index = e.currentTarget.dataset.index * 1
       var item = this.data.data.list[index]
       var choose = item.choose
-      //console.log(123);
-      if (choose != 'disable') {
-        this.setData({
-          index: index
-        })
-      }
+      // if (choose != 'disable') {
+      //   this.setData({
+      //     index: index
+      //   })
+      // }
 
       this.triggerEvent('change', {
         key: item.key,
