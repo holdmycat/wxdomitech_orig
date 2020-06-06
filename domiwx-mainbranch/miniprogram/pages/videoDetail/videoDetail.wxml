@@ -1,16 +1,31 @@
 <!-- 标题 -->
 <view >
   <!-- 横向图标 + 文字描述 -->
-  <view class="layout_horizontal" style="padding-bottom:10px;">
+  <view class="layout_horizontal" style="padding-bottom:10px;height:160px;margin-left:5%;margin-top:2%;">
     <view class = "image">
-    <image  src='{{logoaddr}}' mode="aspectFit"></image>
+      <image  src='{{videoContent.iconUrl}}' mode="aspectFit" style="border-radius:20px"></image>
     </view>
-    <view class = "image, .td">
-      <text style='font-size: 20px; padding-top:10px'>DOMITECH</text>
+    <view style='margin-left:2%;margin-top:5%;display:inline-block;flex-direction:column;'>
+     
+      <text style='font-size: 20px; padding-top:10px;'>{{videoContent.name}}</text>
+     
+      <view style='width:100%'>
+       <text style='font-size: 13px; padding-top:10px;color:#909092;'>{{videoContent.note}}</text>
+      </view >
+        
+      <view style="padding-top:60px;">
+        <text style='font-size: 10px; color:#909092;'>{{videoContent.date}}</text>
+      </view>
+
     </view>
   </view>
 </view>
 
-<view style='border-top:1px solid #EDEDED;padding-top:15px;'> </view>
+<view style='border-top:1px solid #EDEDED;padding-top:15px;padding-bottom:15px;'> </view>
 
-<button data-info='{{order}}'  open-type="share" hover-class='none'>分享</button>
+
+
+
+
+
+<!-- <button data-info='{{order}}'  open-type="share" hover-class='none'>分享</button> -->

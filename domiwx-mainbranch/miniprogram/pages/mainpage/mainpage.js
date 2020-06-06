@@ -182,6 +182,8 @@ Page({
             for(var j = 0; j< m.length; j++) {
                 m[j].frontIconUrl = appdata.httpaddr + m[j].frontIconUrl;
                 m[j].videoUrl = appdata.httpaddr + m[j].videoUrl;
+                m[j].iconUrl = appdata.httpaddr + m[j].iconUrl;
+                
             }
         }
 
