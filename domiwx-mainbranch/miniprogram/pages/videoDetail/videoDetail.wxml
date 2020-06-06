@@ -22,7 +22,7 @@
   </view>
 </view>
 
-<view style='border-top:1px solid #EDEDED;padding-top:15px;padding-bottom:15px;'> </view>
+<view style='border-top:1px solid #EDEDED;padding-top:15px;padding-bottom:5px;'> </view>
 
 
  <video id = 'bc-video'    
@@ -32,7 +32,7 @@
              
 />
 
-<view style='border-top:1px solid #EDEDED; margin-top:15px;padding-bottom:15px;'> </view>
+<view style='border-top:1px solid #EDEDED; margin-top:5px;padding-bottom:5px;'> </view>
 
 <view style="width:90%;margin-left:5%;height:120px">
   <text class="font"> - {{videoContent.descrip}}</text>
@@ -40,7 +40,7 @@
 
 <view>
 
-<button open-type='contact'>点击进入客服会话</button>
+<!-- <button open-type='contact'>点击进入客服会话</button> -->
 
   <button    
       class="share-btn"     

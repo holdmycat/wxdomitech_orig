@@ -29,5 +29,5 @@ width:90%;
 margin-left:5%;
 color:#3478f5;
 position:fixed;
-bottom:20px;
+bottom:10px;
 }
