@@ -25,62 +25,21 @@ Page({
     var index = parseInt(options.index);
 
     if(appdata.sucpros.length == 0) {
-      wx.showLoading({
-        title: 'loading...',
-        mask:true
-      })
-      httputil.httpClient(app.globalData.httpaddr + 'mainpage', (error, data) => {
-        if (data.errorcode == 0) {
-          //服务器返回视频数据
-          var tmp = data.data.sucpros;
-          for(var i = 0; i < tmp.length; i++) {
-              var m = tmp[i].list;
-              for(var j = 0; j< m.length; j++) {
-                  m[j].frontIconUrl = appdata.httpaddr + m[j].frontIconUrl;
-                  m[j].videoUrl = appdata.httpaddr + m[j].videoUrl;
-                  m[j].iconUrl = appdata.httpaddr + m[j].iconUrl; 
-              }
-          }
-          var tmpContent = appdata.sucpros[type].list[index];
-          var tmpVideoHeight = appdata.windowWidth*0.9 * 640/1136;
-          this.setData({
-            type:type,
-            index:index,
-            videoContent:tmpContent,
-            logoaddr:appdata.logourl,
-            videoHeight:tmpVideoHeight
-          })
-          wx.hideLoading({
-            complete: (res) => {},
-          })
-          
-        }
-        else {
-          wx.hideLoading({
-            complete: (res) => {},
-          })
-          wx.showToast({
-            title: '数据错误',
-            duration:1500,
-            mask:true,
-          })
-        }
-    });
+      appdata.sucpros = JSON.parse(options.data);
+      appdata.tabs = JSON.parse(options.tabs);
+    }
+     
+    var tmpContent = appdata.sucpros[type].list[index];
+    var tmpVideoHeight = appdata.windowWidth*0.9 * 640/1136;
+    this.setData({
+      type:type,
+      index:index,
+      videoContent:tmpContent,
+      logoaddr:appdata.logourl,
+      videoHeight:tmpVideoHeight
+    })
+    console.log("videoContent:" + this.data.videoContent.frontIconUrl);
     
-      return;
-    }
-    else {
-      var tmpContent = appdata.sucpros[type].list[index];
-      var tmpVideoHeight = appdata.windowWidth*0.9 * 640/1136;
-      this.setData({
-        type:type,
-        index:index,
-        videoContent:tmpContent,
-        logoaddr:appdata.logourl,
-        videoHeight:tmpVideoHeight
-      })
-      console.log("videoContent:" + this.data.videoContent.frontIconUrl);
-    }
 
    
   },
@@ -136,7 +95,7 @@ Page({
 
     return {
       title: this.data.videoContent.name,
-      path: '/pages/videoDetail/videoDetail?type=' + this.data.type + "&index=" + this.data.index,
+      path: '/pages/videoDetail/videoDetail?type=' + this.data.type + "&index=" + this.data.index + "&data=" + JSON.stringify(appdata.sucpros) + "&tabs=" + JSON.stringify(appdata.tabs),
      
       success: function (res) {
      // 转发成功

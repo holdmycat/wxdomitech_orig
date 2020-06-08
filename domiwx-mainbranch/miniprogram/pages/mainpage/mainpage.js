@@ -18,38 +18,6 @@ Page({
     curIndex: 0,
     logoaddr:'',
     list:[
-      {
-        id:"0",
-        state:1,
-        name:"VR/AR",
-        imgurl:"/images/vrar.png"
-      },
-      {
-        id:"1",
-        state:0,
-        name:"游戏开发",
-        imgurl:"/images/gamedevelop.png"
-      },
-      // {
-      //   name:"游戏策划",
-      //   imgurl:"/images/gamedesign.png"
-      // },
-      {
-        id:"2",
-        state:0,
-        name:"APP开发",
-        imgurl:"/images/mobileapp.png"
-      },
-      // {
-      //   name:"APP设计",
-      //   imgurl:"/images/appdesign.png"
-      // },
-      {
-        id:"3",
-        state:0,
-        name:"微信mini",
-        imgurl:"/images/wechatmini.png"
-      },
     ],
     videoItemInfo:{
       width:0,
@@ -63,7 +31,6 @@ Page({
     ],
     totalVideoList:[
     ],
-    
     tabbar: {
       "color": "#999999",
       "selectedColor": "#7788dd",
@@ -190,9 +157,17 @@ Page({
         //初始化主页面
         var tmp1 = tmp[_this.data.curIndex];
         appdata.sucpros = tmp;
+        var tmpList = this.data.list = appdata.tabs = data.data.tabs;
+
+         
+        for(var i = 0; i < tmpList.length; i++) {
+          tmpList[i].imgurl = appdata.httpaddr +  appdata.tabs[i].imgurl;
+        }
+
         _this.setData({
           totalVideoList:tmp,
-          curVideoList:tmp1
+          curVideoList:tmp1,
+          list:tmpList
         })
         wx.hideLoading({
           complete: (res) => {},
@@ -242,7 +217,7 @@ Page({
     this.setData({
       activecmpindex: nId,
     });
-    var type = "0";
+    var type = this.data.curIndex;
     var index = nId;
     var des = "../videoDetail/videoDetail?type=" + type + "&index=" + index;
     wx.navigateTo({
