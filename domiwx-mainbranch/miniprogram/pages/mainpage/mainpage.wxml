@@ -11,8 +11,9 @@
                 src="{{bannerList[0].imgurl}}">  
                   
       </image>
-       <button bindtap="downLoadAndroid" plain="true" style="border:0;z-index:100;bottom:120px;width:100px;height:40px"></button>  
-       <button bindtap="downLoadIos" plain="true" style="border:0;z-index:100;bottom:110px;width:100px;height:40px"></button>  
+       <button bindtap="downLoadAndroid" plain="true" style="left:-33px;border:0;z-index:100;bottom:100px;width:80px;height:30px"></button>  
+       <button bindtap="downLoadIos" plain="true" style="left:-33px;border:0;z-index:100;bottom:93px;width:80px;height:30px"></button>  
+       
   </view>
     
      
