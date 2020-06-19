@@ -32,12 +32,12 @@ App({
         sucpros:[],//产品列表 
         tabs:[],//标签页信息
         logourl:"",
-        httpaddr: 'http://127.0.0.1:6001/',
-        httpimg: 'http://127.0.0.1:6001/domiwx/',
+        // httpaddr: 'http://127.0.0.1:6001/',
+        // httpimg: 'http://127.0.0.1:6001/domiwx/',
         // httpaddr: 'https://frogcoding.cn/mp_weixin/',
         // httpimg: 'https://frogcoding.cn/mp_weixin/domiwx/',
-        // httpaddr: 'http://192.168.199.249:6001/',
-        // httpimg: 'http://192.168.199.249:6001/domiwx/',
+        httpaddr: 'http://192.168.199.192:6001/',
+        httpimg: 'http://192.168.199.192:6001/domiwx/',
        
         
         // httpaddr: 'http://123.57.240.55:6001/',

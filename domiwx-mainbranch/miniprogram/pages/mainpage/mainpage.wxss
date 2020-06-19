@@ -5,7 +5,9 @@
   height: 1rpx;
  }
 
- 
+ .swiper-change {
+  width: 100%;
+ }
 .page {
   background-color:#303238; 
 height: 100%;
@@ -14,11 +16,9 @@ height: 100%;
 
 /*横向布局  */
 .layout_horizontal{
-  height: 100rpx;
-  display: flex;
+  display: block;
   /*row 横向  column 列表  */
-  flex-direction: row;
-  padding-bottom: 10px;
+  flex-direction: column;
 }
 
 

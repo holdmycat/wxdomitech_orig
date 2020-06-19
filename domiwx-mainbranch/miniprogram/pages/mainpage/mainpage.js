@@ -17,6 +17,8 @@ Page({
     activecmpindex:0,
     curIndex: 0,
     logoaddr:'',
+    swiperHeight:0,
+    bannerList:[],
     list:[
     ],
     videoItemInfo:{
@@ -113,7 +115,8 @@ Page({
       mask:true
     })
     var tmp = this.data.videoItemInfo;
-    var tmp1 = app.globalData.windowHeight - 40 - 10 - 60 - 15 - 40- 18;//scrollview高度
+    this.data.swiperHeight = app.globalData.windowWidth/1.7;
+    var tmp1 = app.globalData.windowHeight - this.data.swiperHeight - 10 - 60 - 15 - 40- 18;//scrollview高度
     
     
     tmp.width = app.globalData.windowWidth*0.9;
@@ -135,7 +138,8 @@ Page({
       videoHeight:tmpVideoHeight,
       videoWidth:tmpVideoWidth,
       videoLeft:tmpVideoLeft,
-      logoaddr:appdata.logourl
+      logoaddr:appdata.logourl,
+      swiperHeight: this.data.swiperHeight
     })
     var _this = this;
     httputil.httpClient(app.globalData.httpaddr + 'mainpage', (error, data) => {
@@ -159,6 +163,12 @@ Page({
         appdata.sucpros = tmp;
         var tmpList = this.data.list = appdata.tabs = data.data.tabs;
 
+        //初始化swiper
+        var tmpSwiperList = this.data.bannerList = appdata.bannerList = data.data.bannerList;
+        for(var i = 0; i < tmpSwiperList.length; i++) {
+          tmpSwiperList[i].imgurl = appdata.httpaddr +  appdata.bannerList[i].imgurl;
+          console.log('zxf:' + tmpSwiperList[i].imgurl);
+        }
          
         for(var i = 0; i < tmpList.length; i++) {
           tmpList[i].imgurl = appdata.httpaddr +  appdata.tabs[i].imgurl;
@@ -167,7 +177,8 @@ Page({
         _this.setData({
           totalVideoList:tmp,
           curVideoList:tmp1,
-          list:tmpList
+          list:tmpList,
+          bannerList:tmpSwiperList
         })
         wx.hideLoading({
           complete: (res) => {},
@@ -188,6 +199,13 @@ Page({
 
   },
 
+  downLoadAndroid:function(){
+    console.log('download android');
+  },
+
+  downLoadIos:function(){
+    console.log('download ios');
+  },
 
   tabChange : function (e) {
     console.log(123)
